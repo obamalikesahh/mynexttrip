@@ -10,6 +10,7 @@ window.__visaFilter = 'all';
 function setVisaFilter(category) {
   window.__visaFilter = category;
   renderVisaSection();
+  renderHeroSearchBar(lang);
 }
 
 function scrollToGroupTours() {
@@ -1105,6 +1106,251 @@ const phraseMappings = [
 ];
 
 // Continuous text node walker & replacer
+
+// ==========================================
+// HERO SEARCH BAR (FROSTED GLASSMORPHISM)
+// ==========================================
+window.__heroSearchTranslations = {
+  hy: {
+    title: 'Ձեր հաջորդ ճանապարհորդությունը սկսվում է այստեղ',
+    subtitle: 'Գտեք ձեր նախընտրած ուղղությունը, ամսաթվերը և ուղևորների քանակը',
+    destLabel: 'Ուղղություն',
+    destPlaceholder: 'Ուր եք ցանկանում մեկնել',
+    destOptions: [
+      { val: 'Dubai', label: '🇦🇪 Դուբայ (Dubai)' },
+      { val: 'Egypt', label: '🇪🇬 Եգիպտոս (Egypt)' },
+      { val: 'Rome', label: '🇮🇹 Հռոմ և Իտալիա (Rome)' },
+      { val: 'Spain', label: '🇪🇸 Իսպանիա (Spain)' },
+      { val: 'Paris', label: '🇫🇷 Փարիզ (Paris)' },
+      { val: 'Greece', label: '🇬🇷 Հունաստան (Greece)' },
+      { val: 'Maldives', label: '🇲🇻 Մալդիվներ (Maldives)' },
+      { val: 'Bali', label: '🇮🇩 Բալի (Bali)' },
+      { val: 'Moscow', label: '🇷🇺 Մոսկվա (Moscow)' }
+    ],
+    datesLabel: 'Մեկնում — Վերադարձ',
+    travelersLabel: 'Ուղևորներ',
+    travelersOptions: [
+      { val: '1 Adult', label: '1 մեծահասակ' },
+      { val: '2 Adults', label: '2 մեծահասակ' },
+      { val: '3 Adults', label: '3 մեծահասակ' },
+      { val: 'Family (2+1)', label: 'Ընտանեկան (2+1)' },
+      { val: 'Group (5+)', label: 'Խումբ (5+)' }
+    ],
+    searchBtn: 'Գտնել առաջարկներ'
+  },
+  ru: {
+    title: 'Ваше следующее путешествие начинается здесь',
+    subtitle: 'Выберите подходящее направление, даты и количество пассажиров',
+    destLabel: 'Направление',
+    destPlaceholder: 'Куда вы хотите поехать?',
+    destOptions: [
+      { val: 'Dubai', label: '🇦🇪 Дубай (ОАЭ)' },
+      { val: 'Egypt', label: '🇪🇬 Египет' },
+      { val: 'Rome', label: '🇮🇹 Рим и Италия' },
+      { val: 'Spain', label: '🇪🇸 Испания' },
+      { val: 'Paris', label: '🇫🇷 Париж (Франция)' },
+      { val: 'Greece', label: '🇬🇷 Греция' },
+      { val: 'Maldives', label: '🇲🇻 Мальдивы' },
+      { val: 'Bali', label: '🇮🇩 Бали' },
+      { val: 'Moscow', label: '🇷🇺 Москва' }
+    ],
+    datesLabel: 'Даты поездки',
+    travelersLabel: 'Пассажиры',
+    travelersOptions: [
+      { val: '1 Adult', label: '1 взрослый' },
+      { val: '2 Adults', label: '2 взрослых' },
+      { val: '3 Adults', label: '3 взрослых' },
+      { val: 'Family (2+1)', label: 'Семья (2+1)' },
+      { val: 'Group (5+)', label: 'Группа (5+)' }
+    ],
+    searchBtn: 'Найти предложения'
+  },
+  en: {
+    title: 'Your Next Journey Begins Here',
+    subtitle: 'Find your preferred destination, travel dates and number of travelers',
+    destLabel: 'Destination',
+    destPlaceholder: 'Where do you want to go?',
+    destOptions: [
+      { val: 'Dubai', label: '🇦🇪 Dubai (UAE)' },
+      { val: 'Egypt', label: '🇪🇬 Egypt' },
+      { val: 'Rome', label: '🇮🇹 Rome & Italy' },
+      { val: 'Spain', label: '🇪🇸 Spain' },
+      { val: 'Paris', label: '🇫🇷 Paris (France)' },
+      { val: 'Greece', label: '🇬🇷 Greece' },
+      { val: 'Maldives', label: '🇲🇻 Maldives' },
+      { val: 'Bali', label: '🇮🇩 Bali' },
+      { val: 'Moscow', label: '🇷🇺 Moscow' }
+    ],
+    datesLabel: 'Departure — Return',
+    travelersLabel: 'Travelers',
+    travelersOptions: [
+      { val: '1 Adult', label: '1 Adult' },
+      { val: '2 Adults', label: '2 Adults' },
+      { val: '3 Adults', label: '3 Adults' },
+      { val: 'Family (2+1)', label: 'Family (2+1)' },
+      { val: 'Group (5+)', label: 'Group (5+)' }
+    ],
+    searchBtn: 'Find Offers'
+  }
+};
+
+function renderHeroSearchBar(lang) {
+  const heroContent = document.querySelector('.framer-75udrc') || document.querySelector('.framer-1ld071l');
+  if (!heroContent) return;
+
+  // Hide the old small button in the hero so there is no clutter
+  const oldBtn = document.querySelector('.framer-q9nfdf');
+  if (oldBtn) oldBtn.style.display = 'none';
+
+  const trans = window.__heroSearchTranslations[lang] || window.__heroSearchTranslations.en;
+  let wrap = document.getElementById('mnt-hero-search-wrap');
+
+  if (!wrap) {
+    wrap = document.createElement('div');
+    wrap.id = 'mnt-hero-search-wrap';
+    wrap.innerHTML = `
+      <div class="mnt-search-header">
+        <h3 class="mnt-search-title" id="mnt-search-title"></h3>
+        <p class="mnt-search-subtitle" id="mnt-search-subtitle"></p>
+      </div>
+      
+      <div class="mnt-search-bar">
+        <!-- Destination -->
+        <div class="mnt-search-field" id="mnt-field-dest">
+          <div class="mnt-field-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="mnt-field-body">
+            <span class="mnt-field-label" id="mnt-lbl-dest"></span>
+            <select class="mnt-field-select" id="mnt-select-destination"></select>
+          </div>
+        </div>
+
+        <div class="mnt-search-divider"></div>
+
+        <!-- Dates -->
+        <div class="mnt-search-field" id="mnt-field-dates">
+          <div class="mnt-field-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+          </div>
+          <div class="mnt-field-body">
+            <span class="mnt-field-label" id="mnt-lbl-dates"></span>
+            <div class="mnt-dates-row">
+              <input type="date" class="mnt-date-input" id="mnt-date-depart" aria-label="Departure Date">
+              <span class="mnt-date-sep">→</span>
+              <input type="date" class="mnt-date-input" id="mnt-date-return" aria-label="Return Date">
+            </div>
+          </div>
+        </div>
+
+        <div class="mnt-search-divider"></div>
+
+        <!-- Travelers -->
+        <div class="mnt-search-field" id="mnt-field-travelers">
+          <div class="mnt-field-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="mnt-field-body">
+            <span class="mnt-field-label" id="mnt-lbl-travelers"></span>
+            <select class="mnt-field-select" id="mnt-select-travelers"></select>
+          </div>
+        </div>
+
+        <!-- Submit button -->
+        <button class="mnt-search-btn" id="mnt-search-btn" type="button" onclick="handleHeroSearchSubmit()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/></svg>
+          <span class="mnt-search-btn-text" id="mnt-hero-btn-text"></span>
+        </button>
+      </div>
+    `;
+    heroContent.appendChild(wrap);
+
+    // Set today as min date
+    const today = new Date().toISOString().split('T')[0];
+    const dep = document.getElementById('mnt-date-depart');
+    const ret = document.getElementById('mnt-date-return');
+    if (dep) dep.min = today;
+    if (ret) ret.min = today;
+    if (dep && ret) {
+      dep.addEventListener('change', () => {
+        if (dep.value) ret.min = dep.value;
+      });
+    }
+  }
+
+  // Update text values
+  const titleEl = document.getElementById('mnt-search-title');
+  const subEl = document.getElementById('mnt-search-subtitle');
+  const destLbl = document.getElementById('mnt-lbl-dest');
+  const destSel = document.getElementById('mnt-select-destination');
+  const datesLbl = document.getElementById('mnt-lbl-dates');
+  const travLbl = document.getElementById('mnt-lbl-travelers');
+  const travSel = document.getElementById('mnt-select-travelers');
+  const btnTxt = document.getElementById('mnt-hero-btn-text');
+
+  if (titleEl) titleEl.textContent = trans.title;
+  if (subEl) subEl.textContent = trans.subtitle;
+  if (destLbl) destLbl.textContent = trans.destLabel;
+  if (datesLbl) datesLbl.textContent = trans.datesLabel;
+  if (travLbl) travLbl.textContent = trans.travelersLabel;
+  if (btnTxt) btnTxt.textContent = trans.searchBtn;
+
+  if (destSel) {
+    const curVal = destSel.value;
+    destSel.innerHTML = `<option value="" disabled ${!curVal ? 'selected' : ''}>${trans.destPlaceholder}</option>` +
+      trans.destOptions.map(opt => `<option value="${opt.val}" ${curVal === opt.val ? 'selected' : ''}>${opt.label}</option>`).join('');
+  }
+
+  if (travSel) {
+    const curTrav = travSel.value || '2 Adults';
+    travSel.innerHTML = trans.travelersOptions.map(opt =>
+      `<option value="${opt.val}" ${curTrav === opt.val ? 'selected' : ''}>${opt.label}</option>`
+    ).join('');
+  }
+}
+
+function handleHeroSearchSubmit() {
+  const destSelect = document.getElementById('mnt-select-destination');
+  const departInput = document.getElementById('mnt-date-depart');
+  const returnInput = document.getElementById('mnt-date-return');
+  const travelersSelect = document.getElementById('mnt-select-travelers');
+
+  const dest = destSelect ? destSelect.value : '';
+  const departDate = departInput ? departInput.value : '';
+  const returnDate = returnInput ? returnInput.value : '';
+  const travelers = travelersSelect ? travelersSelect.value : '2 Adults';
+
+  // Scroll to group tours section
+  const groupSection = document.getElementById('mnt-tour-types-section') || document.getElementById('mnt-tours-section');
+  if (groupSection) {
+    groupSection.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // Pre-fill the modal with user choices so inquiring takes 1 second
+  setTimeout(() => {
+    if (typeof openMyNextTripModal === 'function') {
+      openMyNextTripModal(dest ? `Inquiry: ${dest}` : 'Tour Inquiry');
+
+      const modalDest = document.getElementById('mnt-input-dest');
+      if (modalDest && dest) modalDest.value = dest;
+
+      const modalDep = document.getElementById('mnt-input-depart');
+      if (modalDep && departDate) modalDep.value = departDate;
+
+      const modalRet = document.getElementById('mnt-input-return');
+      if (modalRet && returnDate) modalRet.value = returnDate;
+
+      const modalAdults = document.getElementById('mnt-select-adults');
+      if (modalAdults) {
+        if (travelers.includes('1')) modalAdults.value = '1';
+        else if (travelers.includes('2')) modalAdults.value = '2';
+        else if (travelers.includes('3')) modalAdults.value = '3';
+        else modalAdults.value = '4';
+      }
+    }
+  }, 700);
+}
+
 function applyLanguageToWholePage(lang) {
   updateNavLabels(lang);
 
@@ -1112,6 +1358,7 @@ function applyLanguageToWholePage(lang) {
   window.__currentLang = lang;
   renderTourTypesSection();
   renderVisaSection();
+  renderHeroSearchBar(lang);
 
   currentAppLang = lang;
   window.__currentLang = lang;
