@@ -1,3 +1,200 @@
+
+window.__visaDatabase = {"en": [{"country": "United Arab Emirates", "badge": "Visa-free", "badge_type": "free", "stay": "Stay: up to 90 days in 180 days", "desc": "Armenian citizens enter without a visa. Valid passport for 6 months, return ticket, and hotel booking required.", "link": ""}, {"country": "Qatar", "badge": "Visa-free", "badge_type": "free", "stay": "Stay: up to 90 days", "desc": "No visa needed for tourism. Valid passport for at least 6 months, confirmed hotel booking and return ticket.", "link": ""}, {"country": "Egypt", "badge": "Visa-free / On arrival", "badge_type": "free", "stay": "Stay: Sharm El Sheikh 15 days free, Hurghada/Cairo 30 days", "desc": "Sharm El Sheikh (Sinai) is visa-free up to 15 days. For Hurghada, Cairo and other cities, visa on arrival or e-Visa ($25–30 USD).", "link": "https://www.visa2egypt.gov.eg"}, {"country": "Georgia", "badge": "Visa-free", "badge_type": "free", "stay": "Stay: up to 1 year", "desc": "Visa-free entry for Armenian citizens with ordinary passport or national ID card.", "link": ""}, {"country": "Maldives", "badge": "Visa on arrival", "badge_type": "arrival", "stay": "Stay: 30 days (free)", "desc": "Free 30-day visa upon arrival at Malé airport. Return flight ticket and hotel reservation required.", "link": "https://imuga.immigration.gov.mv"}, {"country": "Thailand", "badge": "Visa required", "badge_type": "required", "stay": "Stay: 30–60 days", "desc": "Visa is required for Armenian citizens. Processing takes 20 to 40 days. We assist with all paperwork, financial statements and appointments.", "link": "https://thaievisa.go.th"}, {"country": "Cyprus", "badge": "Visa required", "badge_type": "required", "stay": "Stay: Depends on visa / Up to 90 days", "desc": "National visa or valid multiple-entry Schengen visa required. Processing takes 2–4 weeks.", "link": ""}, {"country": "Schengen Area (Spain, Italy, France, Greece...)", "badge": "Visa required", "badge_type": "required", "stay": "Stay: up to 90 days in 180 days", "desc": "Schengen visa required. Processing takes approx 15–45 days. Complete guidance on documents, flight/hotel bookings, travel insurance and biometric appointment.", "link": ""}, {"country": "Sri Lanka", "badge": "e-Visa / ETA", "badge_type": "evisa", "stay": "Stay: 30 days", "desc": "Electronic Travel Authorization (ETA) required prior to departure. Processing time 2–3 working days.", "link": "https://www.eta.gov.lk"}, {"country": "United States of America", "badge": "Visa required", "badge_type": "required", "stay": "Stay: B1/B2 Tourist Visa", "desc": "DS-160 application and in-person interview at US Embassy in Yerevan. We assist with DS-160 filling, fees and appointment booking.", "link": ""}, {"country": "United Kingdom", "badge": "Visa required", "badge_type": "required", "stay": "Stay: Standard Visitor Visa (up to 6 months)", "desc": "Online application with biometric submission at TLScontact Yerevan. Processing takes 3–6 weeks.", "link": ""}], "ru": [{"country": "ОАЭ", "badge": "Без визы", "badge_type": "free", "stay": "Срок: до 90 дней в течение 180 дней", "desc": "Граждане Армении въезжают без визы. Требуется загранпаспорт со сроком действия от 6 месяцев, обратный билет и ваучер отеля.", "link": ""}, {"country": "Катар", "badge": "Без визы", "badge_type": "free", "stay": "Срок: до 90 дней", "desc": "Виза для туристических поездок не требуется. Нужен паспорт с запасом 6 месяцев, бронь проживания и обратный билет.", "link": ""}, {"country": "Египет", "badge": "Без визы / По прилёте", "badge_type": "free", "stay": "Срок: Шарм-эль-Шейх 15 дней, Хургада/Каир 30 дней", "desc": "Шарм-эль-Шейх (Синайский штамп) — бесплатно до 15 дней. Для Хургады, Каира и других городов оформляется виза по прилёте или e-Visa ($25–30 USD).", "link": "https://www.visa2egypt.gov.eg"}, {"country": "Грузия", "badge": "Без визы", "badge_type": "free", "stay": "Срок: до 1 года", "desc": "Безвизовый въезд для граждан РА по загранпаспорту или идентификационной карте (ID-карте).", "link": ""}, {"country": "Мальдивы", "badge": "Виза по прилёте", "badge_type": "arrival", "stay": "Срок: 30 дней (бесплатно)", "desc": "Бесплатная туристическая виза оформляется в аэропорту Мале. Необходим обратный билет и бронь отеля.", "link": "https://imuga.immigration.gov.mv"}, {"country": "Таиланд", "badge": "Нужна виза", "badge_type": "required", "stay": "Срок: 30–60 дней", "desc": "Для граждан Армении требуется виза. Срок рассмотрения составляет 20–40 дней. Мы готовим полный пакет документов и помогаем с подачей.", "link": "https://thaievisa.go.th"}, {"country": "Кипр", "badge": "Нужна виза", "badge_type": "required", "stay": "Срок: по визе / до 90 дней", "desc": "Требуется национальная виза Кипра или действующий многократный шенген. Срок оформления 2–4 недели.", "link": ""}, {"country": "Шенгенская зона (Испания, Италия, Франция, Греция...)", "badge": "Нужна виза", "badge_type": "required", "stay": "Срок: до 90 дней в течение 180 дней", "desc": "Обязательна шенгенская виза. Рассмотрение занимает 15–45 дней. Подготавливаем бронирования, страховку, анкеты и запись в визовый центр.", "link": ""}, {"country": "Шри-Ланка", "badge": "Электронная виза", "badge_type": "evisa", "stay": "Срок: 30 дней", "desc": "Оформляется электронное разрешение (ETA/e-Visa) заранее до вылета. Срок оформления 2–3 рабочих дня.", "link": "https://www.eta.gov.lk"}, {"country": "США", "badge": "Нужна виза", "badge_type": "required", "stay": "Срок: Туристическая виза B1/B2", "desc": "Заполнение формы DS-160, оплата консульского сбора и собеседование в посольстве США в Ереване. Полное сопровождение.", "link": ""}, {"country": "Великобритания", "badge": "Нужна виза", "badge_type": "required", "stay": "Срок: Standard Visitor (до 6 месяцев)", "desc": "Онлайн-заявление и сдача биометрии в визовом центре TLScontact в Ереване. Срок рассмотрения 3–6 недель.", "link": ""}], "hy": [{"country": "Արաբական Միացյալ Էմիրություններ (ԱՄԷ)", "badge": "Առանց վիզայի", "badge_type": "free", "stay": "Մնալու ժամկետ՝ մինչև 90 օր 180 օրվա ընթացքում", "desc": "ՀՀ քաղաքացիների համար մուտքն առանց վիզայի է։ Անհրաժեշտ է առնվազն 6 ամիս վավերականության անձնագիր, հետադարձ տոմս և հյուրանոցի ամրագրում։", "link": ""}, {"country": "Կատար", "badge": "Առանց վիզայի", "badge_type": "free", "stay": "Մնալու ժամկետ՝ մինչև 90 օր", "desc": "Զբոսաշրջային նպատակով վիզա չի պահանջվում։ Անհրաժեշտ է 6 ամիս վավեր անձնագիր, հաստատված հյուրանոցի ամրագրում և տոմս։", "link": ""}, {"country": "Եգիպտոս", "badge": "Առանց վիզայի / Ժամանելիս", "badge_type": "free", "stay": "Շարմ էլ-Շեյխ՝ 15 օր անվճար, այլ քաղաքներ՝ 30 օր վիզայով", "desc": "Շարմ էլ-Շեյխ (Սինայի թերակղզի) մուտքն անվճար է մինչև 15 օր։ Հուրգադայի, Կահիրեի և այլ քաղաքների համար վիզան տրվում է ժամանելիս կամ նախապես e-Visa ($25–30 USD)։", "link": "https://www.visa2egypt.gov.eg"}, {"country": "Վրաստան", "badge": "Առանց վիզայի", "badge_type": "free", "stay": "Մնալու ժամկետ՝ մինչև 1 տարի", "desc": "Առանց վիզայի ռեժիմ։ Մուտքը հնարավոր է ինչպես արտասահմանյան անձնագրով, այնպես էլ ՀՀ նույնականացման քարտով (ID քարտով)։", "link": ""}, {"country": "Մալդիվներ", "badge": "Վիզա ժամանելիս", "badge_type": "arrival", "stay": "Մնալու ժամկետ՝ 30 օր (անվճար)", "desc": "Անվճար 30-օրյա վիզան տրվում է Մալեի օդանավակայան ժամանելիս։ Անհրաժեշտ է հետադարձ տոմս և հյուրանոցի ամրագրում։", "link": "https://imuga.immigration.gov.mv"}, {"country": "Թաիլանդ", "badge": "Պահանջվում է վիզա", "badge_type": "required", "stay": "Մնալու ժամկետ՝ 30–60 օր", "desc": "ՀՀ քաղաքացիների համար պահանջվում է վիզա։ Դիմումի քննարկումը տևում է 20-ից 40 օր։ Մենք օգնում ենք փաստաթղթերի ամբողջական փաթեթի պատրաստման և դիմումի գործընթացում։", "link": "https://thaievisa.go.th"}, {"country": "Կիպրոս", "badge": "Պահանջվում է վիզա", "badge_type": "required", "stay": "Մնալու ժամկետ՝ կախված է վիզայից (մինչև 90 օր)", "desc": "Պահանջվում է Կիպրոսի ազգային վիզա կամ գործող բազմակի մուտքի Շենգեն վիզա։ Գործընթացը տևում է 2–4 շաբաթ։", "link": ""}, {"country": "Շենգեն գոտի (Իսպանիա, Իտալիա, Ֆրանսիա, Հունաստան...)", "badge": "Պահանջվում է վիզա", "badge_type": "required", "stay": "Մնալու ժամկետ՝ մինչև 90 օր 180 օրվա ընթացքում", "desc": "Պահանջվում է Շենգեն վիզա։ Քննարկումը տևում է 15-ից 45 օր։ Ապահովում ենք ամբողջական աջակցություն՝ հյուրանոցների, տոմսերի ամրագրում, ապահովագրություն, հերթագրում դեսպանատանը կամ վիզային կենտրոնում։", "link": ""}, {"country": "Շրի Լանկա", "badge": "Էլեկտրոնային վիզա", "badge_type": "evisa", "stay": "Մնալու ժամկետ՝ 30 օր, կրկնակի մուտք", "desc": "Մինչև մեկնելը պետք է օնլայն ձևակերպել էլեկտրոնային մուտքի թույլտվություն (ETA)։ Տևում է 1–3 աշխատանքային օր։", "link": "https://www.eta.gov.lk"}, {"country": "ԱՄՆ", "badge": "Պահանջվում է վիզա", "badge_type": "required", "stay": "Տուրիստական B1/B2 վիզա", "desc": "DS-160 հարցաթերթիկի լրացում, պետական տուրքի վճարում և հարցազրույց Երևանում ԱՄՆ դեսպանատանը։ Մասնագիտացված աջակցություն։", "link": ""}, {"country": "Մեծ Բրիտանիա", "badge": "Պահանջվում է վիզա", "badge_type": "required", "stay": "Standard Visitor վիզա (մինչև 6 ամիս)", "desc": "Օնլայն դիմում և կենսաչափական տվյալների հանձնում Երևանի TLScontact կենտրոնում։ Քննարկումը տևում է 3–6 շաբաթ։", "link": ""}]};
+
+window.__visaSectionTexts = {"hy": {"tag": "Վիզայի աջակցություն", "title": "Վիզայի աջակցություն", "intro": "Մենք կօգնենք Ձեզ կողմնորոշվել վիզայի դիմումի գործընթացում, ներկայացվող փաստաթղթերի պահանջներում և անհրաժեշտ քայլերում։ Ստացեք խորհրդատվություն՝ Ձեր նախընտրած ուղղության և ՀՀ քաղաքացիների համար գործող վիզային պահանջների վերաբերյալ։", "filterAll": "Բոլորը", "filterFree": "Առանց վիզայի", "filterArrival": "Վիզա ժամանելիս", "filterRequired": "Պահանջվում է վիզա", "filterEvisa": "Էլեկտրոնային վիզա", "disclaimer": "Մուտքի կանոնները կարող են փոփոխվել: Մենք միշտ ճշտում ենք գործող կանոնները ամրագրումից առաջ: Նշված են ՀՀ քաղաքացիների սովորական անձնագրով զբոսաշրջային մուտքի պայմանները:", "bannerTitle": "Խորհրդատվություն", "bannerDesc": "Ուղարկեք հայտ՝ վիզայի հարցով անվճար խորհրդատվություն ստանալու համար:", "bannerBtn": "Ուղարկել հայտ", "modalTitle": "Վիզայի խորհրդատվության հայտ", "modalSubtitle": "Ուղարկեք հայտ՝ վիզայի հարցով անվճար խորհրդատվություն ստանալու համար:"}, "ru": {"tag": "Визовая поддержка", "title": "Визовая поддержка", "intro": "Мы поможем Вам разобраться в процессе подачи заявления на визу, требованиях к документам и необходимых этапах оформления. Получите консультацию по визовым требованиям для граждан Армении в зависимости от выбранного направления.", "filterAll": "Все", "filterFree": "Без визы", "filterArrival": "По прилёте", "filterRequired": "Нужна виза", "filterEvisa": "Электронная виза", "disclaimer": "Правила въезда могут меняться. Мы всегда проверяем актуальные требования перед бронированием. Приведены правила для туристических поездок по паспорту гражданина РА.", "bannerTitle": "Консультация", "bannerDesc": "Оставьте заявку, чтобы получить бесплатную консультацию по визовым вопросам.", "bannerBtn": "Оставить заявку", "modalTitle": "Заявка на визовую консультацию", "modalSubtitle": "Оставьте заявку, чтобы получить бесплатную консультацию по визовым вопросам."}, "en": {"tag": "Visa Assistance", "title": "Visa Assistance", "intro": "We’ll help you navigate the visa application process, understand the required documents, and learn about the necessary steps. Get guidance on visa requirements for Armenian citizens based on your chosen destination.", "filterAll": "All Destinations", "filterFree": "Visa-Free", "filterArrival": "On Arrival", "filterRequired": "Visa Required", "filterEvisa": "e-Visa", "disclaimer": "Entry requirements may change. We always confirm current regulations prior to booking. Requirements shown apply to tourism with an ordinary Armenian passport.", "bannerTitle": "Consultation", "bannerDesc": "Submit a request to receive a free visa consultation.", "bannerBtn": "Submit a request", "modalTitle": "Visa Consultation Request", "modalSubtitle": "Submit a request to receive a free visa consultation."}};
+
+window.__tourTypesTexts = {"hy": {"tag": "Տուրերի Ձևաչափեր", "title": "Ընտրեք Ձեր Ճամփորդության Ձևաչափը", "sub": "Միացեք մեր պատրաստի խմբային արշավներին կամ պատվիրեք անհատական երթուղի՝ ստեղծված հատուկ Ձեզ համար:", "group": {"tag": "Պատրաստի Ծրագրեր", "title": "ԽՄԲԱՅԻՆ ՏՈՒՐԵՐ", "desc": "Բացահայտեք նոր ուղղություններ՝ միանալով պատրաստի խմբային ճամփորդություններին։ Ընտրեք Ձեզ հետաքրքրող տուրը՝ հստակ երթուղով, ամսաթվերով և ճամփորդական ծրագրով, ու պատրաստվեք նոր տպավորությունների։", "btn": "Դիտել բոլոր տուրերը", "features": ["Հստակ երթուղի և հաստատված ամսաթվեր", "Փորձառու հայախոս ուղեկցորդ", "Հագեցած էքսկուրսիոն ծրագիր և ամբողջական կազմակերպում"]}, "individual": {"tag": "100% Անհատական", "title": "ԱՆՀԱՏԱԿԱՆ ՏՈՒՐԵՐ", "desc": "Ձեր նախասիրություններին համապատասխան ճամփորդություն՝ Ձեր ընտրած ուղղությամբ և ամսաթվերով։ Ուղարկեք հարցում, իսկ մենք կառաջարկենք Ձեզ համապատասխան տարբերակներ։", "btn": "Ուղարկել հարցում", "features": ["Ճկուն ամսաթվեր և աշխարհի ցանկացած երկիր", "Ընտրովի հյուրանոցներ և անհատական տրանսֆերներ", "Անձնական տուր-մենեջերի 24/7 աջակցություն"]}}, "ru": {"tag": "Форматы Путешествий", "title": "Выберите Формат Вашего Путешествия", "sub": "Присоединяйтесь к готовым групповым турам или закажите индивидуальный маршрут с учётом всех Ваших пожеланий:", "group": {"tag": "Готовые Программы", "title": "ГРУППОВЫЕ ТУРЫ", "desc": "Открывайте новые направления, присоединяясь к готовым групповым турам. Выберите интересующий Вас тур с определённым маршрутом, датами и программой и приготовьтесь к новым впечатлениям.", "btn": "Смотреть все туры", "features": ["Чёткий маршрут и фиксированные даты", "Опытный тур-лидер на протяжении всей поездки", "Продуманная экскурсионная программа и организация под ключ"]}, "individual": {"tag": "100% Индивидуально", "title": "ИНДИВИДУАЛЬНЫЕ ТУРЫ", "desc": "Путешествие с учётом Ваших предпочтений, в выбранном Вами направлении и в удобные для Вас даты. Отправьте запрос, и мы предложим Вам подходящие варианты.", "btn": "Отправить запрос", "features": ["Гибкие даты и любые направления по всему миру", "Подбор отелей премиум-класса и индивидуальные трансферы", "Персональный тревел-менеджер и забота 24/7"]}}, "en": {"tag": "Travel Formats", "title": "Choose Your Travel Format", "sub": "Join our curated group tours or order a completely customized individual trip tailored to your style:", "group": {"tag": "Curated Journeys", "title": "GROUP TOURS", "desc": "Discover new destinations by joining our ready-made group tours. Choose a tour with a specific itinerary, dates, and travel program, and get ready for new experiences.", "btn": "View All Tours", "features": ["Fixed itinerary and verified departure dates", "Experienced dedicated tour leader", "Rich sightseeing program and turnkey travel support"]}, "individual": {"tag": "100% Tailored", "title": "INDIVIDUAL TOURS", "desc": "A trip tailored to your preferences, with your chosen destination and travel dates. Send us an inquiry, and we’ll suggest suitable options for you.", "btn": "Submit Inquiry", "features": ["Flexible dates & destinations worldwide", "Handpicked hotels & custom VIP transfers", "Dedicated personal travel concierge 24/7"]}}};
+
+window.__visaFilter = 'all';
+
+function setVisaFilter(category) {
+  window.__visaFilter = category;
+  renderVisaSection();
+}
+
+function scrollToGroupTours() {
+  const toursSec = document.getElementById('mnt-tours-section') || document.querySelector('section[data-framer-name="Tours"]');
+  if (toursSec) {
+    toursSec.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+function renderTourTypesSection() {
+  let section = document.getElementById('mnt-tour-types-section');
+  if (!section) {
+    section = document.createElement('section');
+    section.id = 'mnt-tour-types-section';
+    section.className = 'mnt-tour-types-section';
+
+    // Insert right before Tours section
+    const toursSection = document.querySelector('section[data-framer-name="Tours"]');
+    if (toursSection && toursSection.parentNode) {
+      toursSection.id = 'mnt-tours-section';
+      toursSection.parentNode.insertBefore(section, toursSection);
+    } else {
+      const footer = document.querySelector('footer');
+      if (footer && footer.parentNode) {
+        footer.parentNode.insertBefore(section, footer);
+      } else {
+        document.body.appendChild(section);
+      }
+    }
+  }
+
+  const lang = (typeof currentAppLang !== 'undefined') ? currentAppLang : 'en';
+  const t = (window.__tourTypesTexts && window.__tourTypesTexts[lang]) ? window.__tourTypesTexts[lang] : window.__tourTypesTexts.en;
+
+  section.innerHTML = `
+    <div class="mnt-types-container">
+      <div class="mnt-types-header">
+        <span class="mnt-types-badge">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+          ${t.tag}
+        </span>
+        <h2 class="mnt-types-title">${t.title}</h2>
+        <p class="mnt-types-sub">${t.sub}</p>
+      </div>
+
+      <div class="mnt-types-grid">
+        <!-- Group Tours Card -->
+        <div class="mnt-type-card mnt-group-card">
+          <div class="mnt-type-card-img" style="background-image: url('https://framerusercontent.com/images/j5yLKM0E783r5ug16dHihjxz6c.png');">
+            <div class="mnt-type-img-overlay"></div>
+            <span class="mnt-type-pill group-pill">${t.group.tag}</span>
+          </div>
+          <div class="mnt-type-content">
+            <h3 class="mnt-type-card-title">${t.group.title}</h3>
+            <p class="mnt-type-desc">${t.group.desc}</p>
+            <div class="mnt-type-features">
+              ${t.group.features.map(f => `<div class="mnt-type-feat"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>${f}</span></div>`).join('')}
+            </div>
+            <button class="mnt-type-btn mnt-btn-group" onclick="scrollToGroupTours()">
+              <span>${t.group.btn}</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="7 13 12 18 17 13"></polyline><line x1="12" y1="6" x2="12" y2="18"></line></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Individual Tours Card -->
+        <div class="mnt-type-card mnt-indiv-card">
+          <div class="mnt-type-card-img" style="background-image: url('https://framerusercontent.com/images/SV1MiT2BJSPLRUGiJqhm8CRVHkg.jpg');">
+            <div class="mnt-type-img-overlay"></div>
+            <span class="mnt-type-pill indiv-pill">${t.individual.tag}</span>
+          </div>
+          <div class="mnt-type-content">
+            <h3 class="mnt-type-card-title">${t.individual.title}</h3>
+            <p class="mnt-type-desc">${t.individual.desc}</p>
+            <div class="mnt-type-features">
+              ${t.individual.features.map(f => `<div class="mnt-type-feat"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>${f}</span></div>`).join('')}
+            </div>
+            <button class="mnt-type-btn mnt-btn-indiv" onclick="openMyNextTripModal('individual')">
+              <span>${t.individual.btn}</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderVisaSection() {
+  let visaSec = document.getElementById('mnt-visa-section');
+  if (!visaSec) {
+    visaSec = document.createElement('section');
+    visaSec.id = 'mnt-visa-section';
+    visaSec.className = 'mnt-visa-section';
+    const footer = document.querySelector('footer');
+    if (footer && footer.parentNode) {
+      footer.parentNode.insertBefore(visaSec, footer);
+    } else {
+      document.body.appendChild(visaSec);
+    }
+  }
+
+  const lang = (typeof currentAppLang !== 'undefined') ? currentAppLang : 'en';
+  const texts = (window.__visaSectionTexts && window.__visaSectionTexts[lang]) ? window.__visaSectionTexts[lang] : window.__visaSectionTexts.en;
+  let allCards = (window.__visaDatabase && window.__visaDatabase[lang]) ? window.__visaDatabase[lang] : [];
+
+  const curFilter = window.__visaFilter || 'all';
+  const filteredCards = allCards.filter(c => {
+    if (curFilter === 'all') return true;
+    if (curFilter === 'free') return c.badge_type === 'free';
+    if (curFilter === 'arrival') return c.badge_type === 'arrival';
+    if (curFilter === 'required') return c.badge_type === 'required';
+    if (curFilter === 'evisa') return c.badge_type === 'evisa';
+    return true;
+  });
+
+  let cardsHtml = '';
+  filteredCards.forEach(card => {
+    let linkHtml = '';
+    if (card.link) {
+      const linkLabel = lang === 'hy' ? 'Պաշտոնական կայք ↗' : (lang === 'ru' ? 'Официальный сайт ↗' : 'Official website ↗');
+      linkHtml = `<a href="${card.link}" target="_blank" rel="noopener noreferrer" class="mnt-visa-link">${linkLabel}</a>`;
+    }
+    cardsHtml += `
+      <div class="mnt-visa-card">
+        <div class="mnt-visa-card-content">
+          <div class="mnt-visa-card-top">
+            <h4 class="mnt-visa-card-title">${card.country}</h4>
+            <span class="mnt-visa-tag ${card.badge_type}">${card.badge}</span>
+          </div>
+          ${card.stay ? `<div class="mnt-visa-stay">${card.stay}</div>` : ''}
+          <p class="mnt-visa-desc">${card.desc}</p>
+        </div>
+        ${linkHtml}
+      </div>
+    `;
+  });
+
+  visaSec.innerHTML = `
+    <div class="mnt-visa-container">
+      <div class="mnt-visa-header">
+        <span class="mnt-visa-badge">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          ${texts.tag}
+        </span>
+        <h2 class="mnt-visa-title">${texts.title}</h2>
+        <p class="mnt-visa-intro">${texts.intro}</p>
+
+        <!-- Category Filters -->
+        <div class="mnt-visa-filters">
+          <button class="mnt-filter-btn ${curFilter === 'all' ? 'active' : ''}" onclick="setVisaFilter('all')">${texts.filterAll}</button>
+          <button class="mnt-filter-btn ${curFilter === 'free' ? 'active' : ''}" onclick="setVisaFilter('free')">${texts.filterFree}</button>
+          <button class="mnt-filter-btn ${curFilter === 'arrival' ? 'active' : ''}" onclick="setVisaFilter('arrival')">${texts.filterArrival}</button>
+          <button class="mnt-filter-btn ${curFilter === 'required' ? 'active' : ''}" onclick="setVisaFilter('required')">${texts.filterRequired}</button>
+          <button class="mnt-filter-btn ${curFilter === 'evisa' ? 'active' : ''}" onclick="setVisaFilter('evisa')">${texts.filterEvisa}</button>
+        </div>
+      </div>
+
+      <div class="mnt-visa-grid">
+        ${cardsHtml}
+      </div>
+
+      <div class="mnt-visa-disclaimer">
+        ${texts.disclaimer}
+      </div>
+
+      <!-- Bottom Consultation Banner -->
+      <div class="mnt-visa-banner">
+        <div class="mnt-visa-banner-text">
+          <h3>${texts.bannerTitle}</h3>
+          <p>${texts.bannerDesc}</p>
+        </div>
+        <button class="mnt-visa-banner-btn" onclick="openVisaConsultationModal()">
+          <span>${texts.bannerBtn}</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>
+    </div>
+  `;
+}
+
+function openVisaConsultationModal() {
+  openMyNextTripModal('visa');
+}
+
 // =========================================================================
 // MyNextTrip - Complete Translation, Logo, Dynamic Images & Form Controller
 // Languages supported: English (EN), Russian (RU), Armenian (HY)
@@ -810,6 +1007,11 @@ const phraseMappings = [
 function applyLanguageToWholePage(lang) {
   currentAppLang = lang;
   window.__currentLang = lang;
+  renderTourTypesSection();
+  renderVisaSection();
+
+  currentAppLang = lang;
+  window.__currentLang = lang;
   
   // 1. Walk document text nodes
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
@@ -875,6 +1077,42 @@ function applyLanguageToWholePage(lang) {
 
 // Ensure Logo and Custom Destinations are always rendered
 function enforceCustomAssets() {
+
+  // Menu link handling for Group Tours and Visa Assistance
+  document.querySelectorAll('a, p, span, h2, h3, h4').forEach(el => {
+    if (el.children.length === 0) {
+      const raw = el.textContent.trim().toLowerCase();
+      if (raw === 'tours' || raw === 'group tours' || raw === 'տուրեր' || raw === 'խմբային տուրեր' || raw === 'туры' || raw === 'групповые туры') {
+        const a = el.closest('a');
+        if (a && !a.__hasGroupListener) {
+          a.__hasGroupListener = true;
+          a.href = '#mnt-tour-types-section';
+          a.addEventListener('click', (e) => {
+            e.preventDefault();
+            const menuTrigger = document.querySelector('[data-framer-name="Menu"], .framer-qeznpr');
+            if (menuTrigger) menuTrigger.click();
+            setTimeout(scrollToGroupTours, 150);
+          });
+        }
+      } else if (raw === 'blogs' || raw === 'visa assistance' || raw === 'visa' || raw === 'բլոգ' || raw === 'վիզայի աջակցություն' || raw === 'блог' || raw === 'визовая поддержка') {
+        const a = el.closest('a');
+        if (a && !a.__hasVisaListener) {
+          a.__hasVisaListener = true;
+          a.href = '#mnt-visa-section';
+          a.addEventListener('click', (e) => {
+            e.preventDefault();
+            const menuTrigger = document.querySelector('[data-framer-name="Menu"], .framer-qeznpr');
+            if (menuTrigger) menuTrigger.click();
+            setTimeout(() => {
+              const v = document.getElementById('mnt-visa-section');
+              if (v) v.scrollIntoView({ behavior: 'smooth' });
+            }, 150);
+          });
+        }
+      }
+    }
+  });
+
 
   // Always enforce proper destination texts (China, Rome, London, Spain) in tickers and cards
   const destTranslations = {
@@ -1101,9 +1339,36 @@ function enforceCustomAssets() {
 }
 
 // Modal control
-function openMyNextTripModal() {
+function openMyNextTripModal(mode) {
   const modal = document.getElementById('mnt-modal-wrap');
   if (modal) {
+    const lang = (typeof currentAppLang !== 'undefined') ? currentAppLang : 'en';
+    const vTexts = (window.__visaSectionTexts && window.__visaSectionTexts[lang]) ? window.__visaSectionTexts[lang] : window.__visaSectionTexts.en;
+    const tTexts = (window.__tourTypesTexts && window.__tourTypesTexts[lang]) ? window.__tourTypesTexts[lang] : window.__tourTypesTexts.en;
+
+    const titleEl = document.getElementById('mnt-modal-title');
+    const subEl = document.getElementById('mnt-modal-subtitle');
+    const btnSpan = document.getElementById('mnt-btn-text');
+    const destSelect = document.getElementById('mnt-dest');
+
+    if (mode === 'visa') {
+      if (titleEl) titleEl.textContent = vTexts.modalTitle;
+      if (subEl) subEl.textContent = vTexts.modalSubtitle;
+      if (btnSpan) btnSpan.textContent = vTexts.bannerBtn;
+      if (destSelect) {
+        for (let i = 0; i < destSelect.options.length; i++) {
+          if (destSelect.options[i].value.includes('Visa') || destSelect.options[i].value.includes('Վիզա') || destSelect.options[i].value.includes('Визов')) {
+            destSelect.selectedIndex = i;
+            break;
+          }
+        }
+      }
+    } else {
+      if (titleEl) titleEl.textContent = tTexts.individual.title;
+      if (subEl) subEl.textContent = tTexts.individual.desc;
+      if (btnSpan) btnSpan.textContent = tTexts.individual.btn;
+    }
+
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
   }

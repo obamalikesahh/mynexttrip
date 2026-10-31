@@ -400,3 +400,1018 @@ a[href*="framer.com/?utm_campaign="] {
   overflow: hidden !important;
 }
 
+
+/* Search Bar in Header */
+.mnt-search-box {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 9999px;
+  padding: 4px 12px 4px 10px;
+  gap: 8px;
+  transition: all 0.25s ease;
+}
+
+.mnt-search-box:focus-within {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(56, 189, 248, 0.6);
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.25);
+}
+
+.mnt-search-box svg {
+  color: #94a3b8;
+  flex-shrink: 0;
+  transition: color 0.2s;
+}
+
+.mnt-search-box:focus-within svg {
+  color: #38bdf8;
+}
+
+.mnt-search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 13px;
+  width: 140px;
+  font-family: inherit;
+  transition: width 0.25s ease;
+}
+
+.mnt-search-input::placeholder {
+  color: #94a3b8;
+  opacity: 0.9;
+}
+
+.mnt-search-input:focus {
+  width: 175px;
+}
+
+@media (max-width: 900px) {
+  .mnt-search-input {
+    width: 95px;
+  }
+  .mnt-search-input:focus {
+    width: 120px;
+  }
+}
+
+@media (max-width: 640px) {
+  .mnt-search-box {
+    display: none;
+  }
+}
+
+/* =========================================================================
+   MyNextTrip Private Tour Modal Design (Matches uploaded mockup)
+   ========================================================================= */
+
+.mnt-custom-modal {
+  max-width: 980px !important;
+  background: #ffffff !important;
+  border-radius: 24px !important;
+  padding: 0 !important;
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.22) !important;
+  overflow: hidden !important;
+}
+
+.mnt-modal-compact-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 28px;
+  border-bottom: 1px solid #f1f5f9;
+  background: #ffffff;
+}
+
+.mnt-modal-title-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mnt-title-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mnt-modal-title-group h2 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0f274a;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.mnt-modal-close-round {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mnt-modal-close-round:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.mnt-custom-body {
+  padding: 28px 32px 32px 32px !important;
+  background: #ffffff;
+}
+
+.mnt-custom-columns {
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  gap: 36px;
+}
+
+.mnt-step-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.mnt-step-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #7ba3d6;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.mnt-step-header h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 17px;
+  font-weight: 800;
+  color: #0d2a54;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.mnt-step-header h3 svg {
+  color: #0d2a54;
+}
+
+.mnt-custom-field {
+  margin-bottom: 18px;
+}
+
+.mnt-custom-field label {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #0f274a;
+  margin-bottom: 7px;
+}
+
+.mnt-input-icon-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1.5px solid #dbe4ef;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.mnt-input-icon-wrap:focus-within {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+.mnt-left-icon {
+  position: absolute;
+  left: 14px;
+  color: #8da4be;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+.mnt-right-icon {
+  position: absolute;
+  right: 14px;
+  color: #8da4be;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+.mnt-input-icon-wrap input,
+.mnt-input-icon-wrap select,
+.mnt-input-icon-wrap textarea {
+  width: 100%;
+  padding: 12px 38px 12px 42px;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 14px;
+  color: #1e293b;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.mnt-input-icon-wrap input::placeholder,
+.mnt-input-icon-wrap textarea::placeholder {
+  color: #94a3b8;
+}
+
+.mnt-input-icon-wrap select {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.mnt-phone-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.mnt-phone-prefix {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-left: 14px;
+  padding-right: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1e293b;
+  border-right: 1px solid #e2e8f0;
+}
+
+.mnt-flag {
+  font-size: 17px;
+  line-height: 1;
+}
+
+.mnt-phone-wrap input {
+  padding-left: 14px !important;
+}
+
+.mnt-radio-channels {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.mnt-radio-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #0f274a;
+  transition: all 0.15s;
+}
+
+.mnt-radio-card:hover {
+  background: #f8fafc;
+}
+
+.mnt-radio-card input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 19px;
+  height: 19px;
+  border: 2px solid #94a3b8;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+  transition: border-color 0.2s;
+  margin: 0;
+}
+
+.mnt-radio-card input[type="radio"]::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  background-color: #1d4ed8;
+}
+
+.mnt-radio-card input[type="radio"]:checked {
+  border-color: #1d4ed8;
+}
+
+.mnt-radio-card input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+.mnt-channel-icon {
+  display: flex;
+  align-items: center;
+  color: #0f274a;
+}
+
+.mnt-custom-submit-btn {
+  background: linear-gradient(135deg, #1d4ed8 0%, #0284c7 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 14px;
+  padding: 14px 44px;
+  font-size: 16px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(2, 132, 199, 0.35);
+  transition: all 0.2s;
+}
+
+.mnt-custom-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(2, 132, 199, 0.45);
+}
+
+/* =========================================================================
+   Visa Assistance Section (Copied from NemoTravel, matching MyNextTrip style)
+   ========================================================================= */
+
+#mnt-visa-section {
+  padding: 90px 24px;
+  background: #ffffff;
+  position: relative;
+}
+
+.mnt-visa-container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.mnt-visa-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 50px auto;
+}
+
+.mnt-visa-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.mnt-visa-title {
+  font-size: 38px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px 0;
+}
+
+.mnt-visa-intro {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #475569;
+  margin: 0;
+}
+
+.mnt-visa-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.mnt-visa-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 24px 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.mnt-visa-card:hover {
+  border-color: #38bdf8;
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
+}
+
+.mnt-visa-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.mnt-visa-card-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f274a;
+  margin: 0;
+  line-height: 1.35;
+}
+
+.mnt-visa-tag {
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.mnt-visa-tag.free {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.mnt-visa-tag.arrival {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.mnt-visa-tag.evisa {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.mnt-visa-tag.required {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.mnt-visa-stay {
+  font-size: 13.5px;
+  color: #334155;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.mnt-visa-stay strong {
+  color: #0f172a;
+}
+
+.mnt-visa-desc {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #64748b;
+  margin: 0 0 16px 0;
+  flex-grow: 1;
+}
+
+.mnt-visa-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #0284c7;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.mnt-visa-link:hover {
+  color: #0369a1;
+  text-decoration: underline;
+}
+
+.mnt-visa-disclaimer {
+  font-size: 13px;
+  color: #94a3b8;
+  margin-top: 32px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Consultation Banner */
+.mnt-visa-banner {
+  margin-top: 40px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  border-radius: 24px;
+  padding: 36px 44px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
+}
+
+.mnt-visa-banner-text h3 {
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+  color: #ffffff;
+}
+
+.mnt-visa-banner-text p {
+  font-size: 15px;
+  color: #cbd5e1;
+  margin: 0;
+  max-width: 620px;
+  line-height: 1.5;
+}
+
+.mnt-visa-banner-btn {
+  background: linear-gradient(135deg, #0284c7, #0369a1);
+  color: #ffffff;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 9999px;
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 8px 20px rgba(2, 132, 199, 0.35);
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.mnt-visa-banner-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(2, 132, 199, 0.5);
+}
+
+@media (max-width: 1024px) {
+  .mnt-visa-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .mnt-visa-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .mnt-visa-banner-text p {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .mnt-custom-columns {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .mnt-visa-grid {
+    grid-template-columns: 1fr;
+  }
+  .mnt-visa-title {
+    font-size: 28px;
+  }
+}
+
+
+
+/* === TOUR TYPES SECTION (Group Tours & Individual Tours) === */
+.mnt-tour-types-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 90px auto 70px auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+}
+
+.mnt-types-header {
+  text-align: center;
+  margin-bottom: 46px;
+}
+
+.mnt-types-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 18px;
+  border-radius: 9999px;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  color: #38bdf8;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.mnt-types-title {
+  font-size: 38px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 18px 0 12px 0;
+  letter-spacing: -0.02em;
+  font-family: "Cal Sans", "Inter", -apple-system, sans-serif;
+  line-height: 1.25;
+}
+
+.mnt-types-sub {
+  font-size: 16px;
+  color: #94a3b8;
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.mnt-types-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.mnt-type-card {
+  position: relative;
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(22, 29, 44, 0.88) 0%, rgba(10, 14, 23, 0.97) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.45);
+}
+
+.mnt-type-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: 0 28px 65px rgba(2, 132, 199, 0.22);
+}
+
+.mnt-type-card-img {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 22px;
+  box-sizing: border-box;
+}
+
+.mnt-type-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 14, 23, 0.2) 0%, rgba(10, 14, 23, 0.95) 100%);
+}
+
+.mnt-type-pill {
+  position: relative;
+  z-index: 2;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.group-pill {
+  background: rgba(56, 189, 248, 0.22);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.45);
+  backdrop-filter: blur(8px);
+}
+
+.indiv-pill {
+  background: rgba(34, 197, 94, 0.22);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.45);
+  backdrop-filter: blur(8px);
+}
+
+.mnt-type-content {
+  padding: 28px 32px 34px 32px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.mnt-type-card-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 14px 0;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+.mnt-type-desc {
+  font-size: 15px;
+  color: #cbd5e1;
+  line-height: 1.65;
+  margin: 0 0 22px 0;
+  flex-grow: 1;
+}
+
+.mnt-type-features {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 26px;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.mnt-type-feat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.5px;
+  color: #e2e8f0;
+  font-weight: 500;
+}
+
+.mnt-type-btn {
+  width: 100%;
+  padding: 15px 24px;
+  border-radius: 9999px;
+  font-size: 15px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s ease;
+}
+
+.mnt-btn-group {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.35);
+}
+
+.mnt-btn-group:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(2, 132, 199, 0.5);
+  filter: brightness(1.1);
+}
+
+.mnt-btn-indiv {
+  background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.35);
+}
+
+.mnt-btn-indiv:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(14, 165, 233, 0.5);
+  filter: brightness(1.1);
+}
+
+/* === VISA FILTERS === */
+.mnt-visa-filters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 26px auto 0 auto;
+}
+
+.mnt-filter-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #cbd5e1;
+  padding: 9px 20px;
+  border-radius: 9999px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mnt-filter-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+.mnt-filter-btn.active {
+  background: #0284c7;
+  border-color: #38bdf8;
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.45);
+}
+
+@media (max-width: 900px) {
+  .mnt-types-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .mnt-types-title {
+    font-size: 30px;
+  }
+  .mnt-type-content {
+    padding: 22px 20px 26px 20px;
+  }
+}
+
+
+/* === CONTAINER LUXURY DARK BACKDROP === */
+.mnt-tour-types-section {
+  width: 100%;
+  max-width: 1240px;
+  margin: 90px auto 70px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+}
+
+.mnt-types-container {
+  background: linear-gradient(180deg, #0d131f 0%, #070a10 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 36px;
+  padding: 64px 40px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+  box-sizing: border-box;
+}
+
+.mnt-visa-section {
+  width: 100%;
+  max-width: 1240px;
+  margin: 90px auto 90px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+}
+
+.mnt-visa-container {
+  background: linear-gradient(180deg, #0d131f 0%, #070a10 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 36px;
+  padding: 64px 40px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+  box-sizing: border-box;
+}
+
+.mnt-visa-title {
+  color: #ffffff !important;
+  font-family: "Cal Sans", Inter, -apple-system, sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  margin: 18px 0 12px 0;
+  letter-spacing: -0.02em;
+}
+
+.mnt-visa-intro {
+  color: #94a3b8 !important;
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 720px;
+  margin: 0 auto 30px auto;
+}
+
+.mnt-visa-card {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 20px !important;
+  padding: 24px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  transition: all 0.25s ease !important;
+}
+
+.mnt-visa-card:hover {
+  transform: translateY(-4px) !important;
+  border-color: rgba(56, 189, 248, 0.35) !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4) !important;
+}
+
+.mnt-visa-card-title {
+  color: #ffffff !important;
+  font-size: 19px !important;
+  font-weight: 700 !important;
+  margin: 0 !important;
+}
+
+.mnt-visa-stay {
+  color: #38bdf8 !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  margin: 10px 0 8px 0 !important;
+}
+
+.mnt-visa-desc {
+  color: #94a3b8 !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+.mnt-visa-disclaimer {
+  color: #64748b !important;
+  font-size: 13.5px !important;
+  text-align: center !important;
+  max-width: 800px !important;
+  margin: 36px auto 30px auto !important;
+  line-height: 1.6 !important;
+}
+
+.mnt-visa-banner {
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.15) 0%, rgba(14, 165, 233, 0.05) 100%) !important;
+  border: 1px solid rgba(56, 189, 248, 0.3) !important;
+  border-radius: 24px !important;
+  padding: 32px 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 24px !important;
+}
+
+.mnt-visa-banner-text h3 {
+  color: #ffffff !important;
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  margin: 0 0 6px 0 !important;
+}
+
+.mnt-visa-banner-text p {
+  color: #cbd5e1 !important;
+  font-size: 15px !important;
+  margin: 0 !important;
+}
+
+.mnt-visa-banner-btn {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%) !important;
+  color: #ffffff !important;
+  padding: 14px 28px !important;
+  border-radius: 9999px !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  border: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
+  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.4) !important;
+  transition: all 0.25s ease !important;
+}
+
+.mnt-visa-banner-btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 12px 32px rgba(2, 132, 199, 0.6) !important;
+  filter: brightness(1.1) !important;
+}
+
+.mnt-visa-link {
+  color: #38bdf8 !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  margin-top: 14px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+
+.mnt-visa-link:hover {
+  text-decoration: underline !important;
+  color: #7dd3fc !important;
+}

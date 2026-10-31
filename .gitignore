@@ -11,6 +11,8 @@ node_modules
 dist
 dist-ssr
 *.local
+__pycache__/
+temp_chrome_profile/
 
 # Editor directories and files
 .vscode/*
@@ -22,7 +24,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+*.code-workspace
 
-# Debug screenshots
-screenshot_*.png
-current_full.png
+# Debug screenshots & temporary images
+*.png
