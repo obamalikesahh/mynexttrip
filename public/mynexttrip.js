@@ -19,6 +19,107 @@ function scrollToGroupTours() {
   }
 }
 
+
+window.__menuNavTranslations = {
+  en: {
+    indiv: "Private Tours",
+    group: "Group Tours",
+    visa: "Visa Assistance",
+    why: "Why MyNextTrip",
+    contact: "Contact",
+    bookBtn: "Book A Trip"
+  },
+  ru: {
+    indiv: "Индивидуальные туры",
+    group: "Групповые туры",
+    visa: "Визовая поддержка",
+    why: "Почему MyNextTrip",
+    contact: "Контакты",
+    bookBtn: "Забронировать"
+  },
+  hy: {
+    indiv: "Անհատական տուրեր",
+    group: "Խմբային տուրեր",
+    visa: "Վիզայի աջակցություն",
+    why: "Ինչու MyNextTrip",
+    contact: "Կապ",
+    bookBtn: "Ամրագրել"
+  }
+};
+
+function handleMenuNav(e, target) {
+  if (e && e.preventDefault) e.preventDefault();
+  closeMobileDrawer();
+
+  // Close Framer overlay if open
+  const framerMenu = document.querySelector('[data-framer-name="Menu"], .framer-qeznpr');
+  const overlay = document.getElementById('template-overlay');
+  if (overlay && overlay.children.length > 0 && framerMenu) {
+    framerMenu.click();
+  }
+
+  setTimeout(() => {
+    if (target === 'individual') {
+      openMyNextTripModal('individual');
+    } else if (target === 'group') {
+      const g = document.getElementById('mnt-tour-types-section') || document.querySelector('section[data-framer-name="Tours"]');
+      if (g) g.scrollIntoView({ behavior: 'smooth' });
+    } else if (target === 'visa') {
+      const v = document.getElementById('mnt-visa-section');
+      if (v) v.scrollIntoView({ behavior: 'smooth' });
+    } else if (target === 'why') {
+      const w = document.querySelector('section[data-framer-name="Why Us"]') || document.querySelector('section[data-framer-name="Experience"]');
+      if (w) w.scrollIntoView({ behavior: 'smooth' });
+    } else if (target === 'contact') {
+      const c = document.querySelector('footer') || document.querySelector('section[data-framer-name="Conversion"]');
+      if (c) c.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, 100);
+}
+
+function toggleMobileDrawer() {
+  const drawer = document.getElementById('mnt-mobile-drawer');
+  if (!drawer) return;
+  if (drawer.classList.contains('open')) {
+    closeMobileDrawer();
+  } else {
+    drawer.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeMobileDrawer() {
+  const drawer = document.getElementById('mnt-mobile-drawer');
+  if (drawer) {
+    drawer.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+
+function updateNavLabels(lang) {
+  const trans = window.__menuNavTranslations[lang] || window.__menuNavTranslations.en;
+  
+  const setEl = (id, val) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = val;
+  };
+
+  setEl('mnt-nav-indiv', trans.indiv);
+  setEl('mnt-nav-group', trans.group);
+  setEl('mnt-nav-visa', trans.visa);
+  setEl('mnt-nav-why', trans.why);
+  setEl('mnt-nav-contact', trans.contact);
+
+  setEl('mnt-mob-indiv', trans.indiv);
+  setEl('mnt-mob-group', trans.group);
+  setEl('mnt-mob-visa', trans.visa);
+  setEl('mnt-mob-why', trans.why);
+  setEl('mnt-mob-contact', trans.contact);
+
+  const bookBtn = document.getElementById('mnt-book-btn-text');
+  if (bookBtn) bookBtn.textContent = trans.bookBtn;
+}
+
 function renderTourTypesSection() {
   let section = document.getElementById('mnt-tour-types-section');
   if (!section) {
@@ -1005,6 +1106,8 @@ const phraseMappings = [
 
 // Continuous text node walker & replacer
 function applyLanguageToWholePage(lang) {
+  updateNavLabels(lang);
+
   currentAppLang = lang;
   window.__currentLang = lang;
   renderTourTypesSection();
@@ -1454,30 +1557,73 @@ function initMyNextTrip() {
   // Enforce custom assets immediately
   enforceCustomAssets();
 
-  // Inject Top Navigation & Language Switcher
+    // Inject Top Navigation & Mobile Drawer
   if (!document.getElementById('mnt-top-bar')) {
-    const langBar = document.createElement('div');
+    const langBar = document.createElement('header');
     langBar.id = 'mnt-top-bar';
     langBar.innerHTML = `
       <div class="mnt-bar-inner">
-        <div class="mnt-brand-badge">
-          <span class="mnt-dot"></span>
-          <strong>MyNextTrip</strong> • Travel Agency
+        <!-- Logo -->
+        <div class="mnt-brand-badge" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(45deg);"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+          <div class="mnt-brand-text">
+            <strong>MyNextTrip</strong>
+            <span>TRAVEL AGENCY</span>
+          </div>
         </div>
+
+        <!-- 5 Desktop Nav Links in Exact Specified Order -->
+        <nav class="mnt-desktop-nav">
+          <a href="#individual" class="mnt-nav-item" id="mnt-nav-indiv" onclick="handleMenuNav(event, 'individual')">Private Tours</a>
+          <a href="#group" class="mnt-nav-item" id="mnt-nav-group" onclick="handleMenuNav(event, 'group')">Group Tours</a>
+          <a href="#visa" class="mnt-nav-item" id="mnt-nav-visa" onclick="handleMenuNav(event, 'visa')">Visa Assistance</a>
+          <a href="#why" class="mnt-nav-item" id="mnt-nav-why" onclick="handleMenuNav(event, 'why')">Why MyNextTrip</a>
+          <a href="#contact" class="mnt-nav-item" id="mnt-nav-contact" onclick="handleMenuNav(event, 'contact')">Contact</a>
+        </nav>
+
+        <!-- Right Controls -->
         <div class="mnt-controls">
           <div class="mnt-lang-switcher">
             <button class="mnt-lang-btn active" data-lang="en">EN</button>
             <button class="mnt-lang-btn" data-lang="ru">RU</button>
             <button class="mnt-lang-btn" data-lang="hy">ՀԱՅ</button>
           </div>
-          <button class="mnt-book-btn" onclick="openMyNextTripModal()">
-            <span>Book Tour / Запрос</span>
+          <button class="mnt-book-btn" onclick="openMyNextTripModal('individual')">
+            <span id="mnt-book-btn-text">Book A Trip</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+          <!-- Mobile Hamburger Toggle -->
+          <button class="mnt-mob-toggle" onclick="toggleMobileDrawer()" aria-label="Toggle Navigation">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
           </button>
         </div>
       </div>
     `;
     document.body.appendChild(langBar);
+
+    // Create Mobile Full-Screen Drawer
+    const drawer = document.createElement('div');
+    drawer.id = 'mnt-mobile-drawer';
+    drawer.innerHTML = `
+      <div class="mnt-drawer-backdrop" onclick="closeMobileDrawer()"></div>
+      <div class="mnt-drawer-panel">
+        <div class="mnt-drawer-header">
+          <div class="mnt-brand-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2" style="transform: rotate(45deg);"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+            <span style="font-weight: 700; color: #fff; font-size: 17px;">MyNextTrip</span>
+          </div>
+          <button class="mnt-drawer-close" onclick="closeMobileDrawer()">✕</button>
+        </div>
+        <nav class="mnt-drawer-nav">
+          <a href="#individual" class="mnt-mob-link" id="mnt-mob-indiv" onclick="handleMenuNav(event, 'individual')">Private Tours</a>
+          <a href="#group" class="mnt-mob-link" id="mnt-mob-group" onclick="handleMenuNav(event, 'group')">Group Tours</a>
+          <a href="#visa" class="mnt-mob-link" id="mnt-mob-visa" onclick="handleMenuNav(event, 'visa')">Visa Assistance</a>
+          <a href="#why" class="mnt-mob-link" id="mnt-mob-why" onclick="handleMenuNav(event, 'why')">Why MyNextTrip</a>
+          <a href="#contact" class="mnt-mob-link" id="mnt-mob-contact" onclick="handleMenuNav(event, 'contact')">Contact</a>
+        </nav>
+      </div>
+    `;
+    document.body.appendChild(drawer);
 
     // Event listener for language buttons
     document.querySelectorAll('.mnt-lang-btn').forEach(btn => {
