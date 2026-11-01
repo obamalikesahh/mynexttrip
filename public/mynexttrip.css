@@ -1497,3 +1497,739 @@
     font-size: 15px !important;
   }
 }
+
+
+/* ==========================================================================
+   Back To Top Floating Button (Bottom Right)
+   ========================================================================== */
+.mnt-back-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.4), 0 2px 6px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 99999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px) scale(0.9);
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.3s,
+              box-shadow 0.2s,
+              background 0.2s;
+}
+
+.mnt-back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.mnt-back-to-top:hover {
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+  box-shadow: 0 12px 30px rgba(2, 132, 199, 0.6), 0 4px 10px rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px) scale(1.05);
+}
+
+.mnt-back-to-top:active {
+  transform: translateY(0) scale(0.96);
+}
+
+/* ==========================================================================
+   Why MyNextTrip Custom Grid & Cards
+   ========================================================================== */
+.mnt-why-custom-wrap {
+  width: 100%;
+  max-width: 1240px;
+  margin: 40px auto 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.mnt-why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 900px) {
+  .mnt-why-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.mnt-why-card {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.mnt-why-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: 0 16px 36px rgba(56, 189, 248, 0.15);
+}
+
+.mnt-why-icon-wrap {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+}
+
+.mnt-why-card-title {
+  font-family: inherit;
+  font-size: 19px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 12px 0;
+  letter-spacing: 0.5px;
+  line-height: 1.35;
+}
+
+.mnt-why-card-desc {
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #cbd5e1;
+  margin: 0;
+}
+
+.mnt-why-btn-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.mnt-why-learn-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 34px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.mnt-why-learn-btn:hover {
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(2, 132, 199, 0.5);
+}
+
+/* ==========================================================================
+   Why MyNextTrip "Learn More" Trust Modal
+   ========================================================================== */
+.mnt-why-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 100000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.mnt-why-modal-card {
+  background: #ffffff;
+  color: #0f172a;
+  max-width: 680px;
+  width: 100%;
+  border-radius: 24px;
+  padding: 36px 36px 30px 36px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  box-sizing: border-box;
+  animation: mntModalIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mnt-why-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 14px;
+}
+
+.mnt-why-modal-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  color: #0284c7;
+  font-size: 16px;
+}
+
+.mnt-why-modal-close {
+  background: #f1f5f9;
+  border: none;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 15px;
+  color: #64748b;
+  transition: background 0.2s, color 0.2s;
+}
+
+.mnt-why-modal-close:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.mnt-why-modal-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 18px 0;
+}
+
+.mnt-why-modal-body p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #334155;
+  margin: 0 0 14px 0;
+}
+
+.mnt-why-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.mnt-why-modal-btn {
+  background: #0284c7;
+  color: #ffffff;
+  padding: 10px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.mnt-why-modal-btn:hover {
+  background: #0369a1;
+}
+
+/* ==========================================================================
+   Modern Inquiry Modal Design matching media_1793548187883_4ff4f122.png
+   ========================================================================== */
+#mnt-modal-wrap {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+}
+
+.mnt-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  overflow-y: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 30px 16px;
+  box-sizing: border-box;
+}
+
+.mnt-modal-card {
+  background: #ffffff;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 960px;
+  margin: 20px auto;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  animation: mntModalIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+.mnt-modal-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 32px;
+  background: #ffffff;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.mnt-modal-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mnt-modal-brand strong {
+  font-size: 18px;
+  color: #1e3a8a;
+  display: block;
+  line-height: 1.2;
+}
+
+.mnt-modal-brand span {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.mnt-modal-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e3a8a;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mnt-modal-back-btn:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.mnt-modal-banner {
+  position: relative;
+  background: linear-gradient(135deg, #0284c7 0%, #1e40af 100%);
+  padding: 44px 36px 36px 36px;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.mnt-modal-banner-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://framerusercontent.com/images/SV1MiT2BJSPLRUGiJqhm8CRVHkg.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.25;
+}
+
+.mnt-modal-banner-content {
+  position: relative;
+  z-index: 1;
+}
+
+.mnt-modal-banner-content h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+}
+
+.mnt-modal-banner-content p {
+  font-size: 15px;
+  margin: 0;
+  color: #e0f2fe;
+}
+
+.mnt-modal-body {
+  padding: 32px 36px;
+  background: #ffffff;
+}
+
+.mnt-form-columns {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 32px;
+}
+
+@media (max-width: 820px) {
+  .mnt-form-columns {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.mnt-panel {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 24px;
+}
+
+.mnt-panel-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 17px;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 20px;
+}
+
+.mnt-step-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mnt-field {
+  margin-bottom: 16px;
+}
+
+.mnt-field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 6px;
+}
+
+.mnt-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.mnt-input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.mnt-input-with-icon svg {
+  position: absolute;
+  left: 14px;
+  pointer-events: none;
+}
+
+.mnt-input-with-icon input,
+.mnt-input-with-icon select {
+  width: 100%;
+  padding: 11px 14px 11px 40px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #0f172a;
+  background: #f8fafc;
+  outline: none;
+  transition: all 0.2s;
+  box-sizing: border-box;
+}
+
+.mnt-input-with-icon input:focus,
+.mnt-input-with-icon select:focus,
+.mnt-phone-group input:focus,
+#mnt-input-notes:focus {
+  border-color: #2563eb;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.mnt-phone-group {
+  display: flex;
+  align-items: center;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #f8fafc;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+
+.mnt-phone-prefix {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px;
+  background: #e2e8f0;
+  height: 42px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e293b;
+  border-right: 1px solid #cbd5e1;
+}
+
+.mnt-phone-group input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 11px 14px;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+#mnt-input-notes {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #0f172a;
+  background: #f8fafc;
+  outline: none;
+  box-sizing: border-box;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.mnt-char-counter {
+  text-align: right;
+  font-size: 11px;
+  color: #94a3b8;
+  margin-top: 4px;
+}
+
+.mnt-helper {
+  font-size: 11px;
+  color: #64748b;
+  display: block;
+  margin-top: 4px;
+}
+
+.mnt-channel-hint {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0 0 14px 0;
+}
+
+.mnt-channels-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.mnt-channel-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #f8fafc;
+  transition: all 0.2s;
+}
+
+.mnt-channel-option:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.mnt-channel-option input[type="radio"] {
+  accent-color: #2563eb;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.mnt-channel-option span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.mnt-security-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.mnt-security-card strong {
+  display: block;
+  font-size: 13px;
+  color: #1e40af;
+  margin-bottom: 2px;
+}
+
+.mnt-security-card p {
+  font-size: 12px;
+  color: #3b82f6;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.mnt-submit-row {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+}
+
+.mnt-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 16px 28px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(29, 78, 216, 0.35);
+  transition: all 0.2s ease;
+}
+
+.mnt-submit-btn:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  box-shadow: 0 14px 30px rgba(29, 78, 216, 0.5);
+  transform: translateY(-2px);
+}
+
+
+/* ==========================================================================
+   Why MyNextTrip Customized Panel Inside Left Content
+   ========================================================================== */
+.mnt-why-custom-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px 4px;
+  box-sizing: border-box;
+}
+
+.mnt-why-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+}
+
+.mnt-why-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 18px 14px;
+  border-radius: 16px;
+  transition: background 0.2s ease;
+}
+
+.mnt-why-list-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.mnt-why-item-icon {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 12px;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #38bdf8;
+  margin-top: 2px;
+}
+
+.mnt-why-item-text {
+  flex: 1;
+}
+
+.mnt-why-item-title {
+  font-family: inherit;
+  font-size: 17px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 6px 0;
+  letter-spacing: 0.3px;
+  line-height: 1.35;
+}
+
+.mnt-why-item-desc {
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #cbd5e1;
+  margin: 0;
+}
+
+.mnt-why-item-divider {
+  height: 1px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin: 4px 0;
+}
+
+.mnt-why-btn-container {
+  display: flex;
+  margin-top: 22px;
+  padding-left: 14px;
+}
+
+.mnt-why-learn-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 28px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.mnt-why-learn-btn:hover {
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(2, 132, 199, 0.5);
+}

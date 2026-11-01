@@ -28,7 +28,7 @@ window.__menuNavTranslations = {
     visa: "Visa Assistance",
     why: "Why MyNextTrip",
     contact: "Contact",
-    bookBtn: "Book A Trip"
+    bookBtn: "Submit Inquiry"
   },
   ru: {
     indiv: "Индивидуальные туры",
@@ -36,7 +36,7 @@ window.__menuNavTranslations = {
     visa: "Визовая поддержка",
     why: "Почему MyNextTrip",
     contact: "Контакты",
-    bookBtn: "Забронировать"
+    bookBtn: "Отправить запрос"
   },
   hy: {
     indiv: "Անհատական տուրեր",
@@ -44,7 +44,7 @@ window.__menuNavTranslations = {
     visa: "Վիզայի աջակցություն",
     why: "Ինչու MyNextTrip",
     contact: "Կապ",
-    bookBtn: "Ամրագրել"
+    bookBtn: "Ուղարկել հարցում"
   }
 };
 
@@ -1351,6 +1351,239 @@ function handleHeroSearchSubmit() {
   }, 700);
 }
 
+
+// =========================================================================
+// Why MyNextTrip Feature Grid & Learn More Modal
+// =========================================================================
+
+window.__whyMyNextTripTexts = {
+  hy: {
+    tag: "Ինչու MyNextTrip",
+    title: "Ինչու՞ ճամփորդել MyNextTrip-ի հետ",
+    items: [
+      {
+        icon: 'user-check',
+        title: "ԱՆՀԱՏԱԿԱՆ ՄՈՏԵՑՈՒՄ",
+        desc: "Ձեր պահանջներին համապատասխան առաջարկներ"
+      },
+      {
+        icon: 'scale',
+        title: "ՏԱՐԲԵՐԱԿՆԵՐԻ ՀԱՄԱԴՐՈՒՄ",
+        desc: "Մենք գտնում ենք տարբերակներ և համադրում Ձեզ համար"
+      },
+      {
+        icon: 'headset',
+        title: "ԱՋԱԿՑՈՒԹՅՈՒՆ",
+        desc: "Ճամփորդության ընթացքում մենք միշտ կապի մեջ ենք Ձեզ հետ:"
+      }
+    ],
+    learnMoreBtn: "Իմանալ ավելին",
+    modalTitle: "Ինչու՞ ընտրել MyNextTrip-ը",
+    modalContent: [
+      "Ձեր վստահությունը՝ մեր առաջնահերթությունն է։",
+      "Մենք կօգնենք Ձեզ գտնել Ձեր նախասիրություններին, նախընտրած ուղղությանը և բյուջեին համապատասխան ճամփորդական առաջարկներ։ Մենք կաջակցենք Ձեզ ընտրության հարցում՝ դարձնելով ճամփորդության պլանավորումն ավելի հեշտ ու հարմար։",
+      "Մենք հավատում ենք, որ լավ ճամփորդությունը սկսվում է վստահելի ընտրությունից։ My Next Trip-ի միջոցով կարող եք մեկ վայրում ծանոթանալ ճամփորդական առաջարկներին, ստանալ անհատական խորհրդատվություն և ընտրել Ձեր նախասիրություններին համապատասխան տարբերակը։",
+      "Մենք կարևորում ենք թափանցիկ տեղեկատվությունը, անհատական մոտեցումն ու հստակ հաղորդակցությունը, որպեսզի ճամփորդության յուրաքանչյուր որոշում կայացնեք վստահությամբ։",
+      "Ձեր հաջորդ ճամփորդությունը սկսեք մեզ հետ։"
+    ],
+    closeBtn: "Փակել"
+  },
+  ru: {
+    tag: "Почему MyNextTrip",
+    title: "Почему выбирают MyNextTrip",
+    items: [
+      {
+        icon: 'user-check',
+        title: "ИНДИВИДУАЛЬНЫЙ ПОДХОД",
+        desc: "Предложения с учётом ваших пожеланий"
+      },
+      {
+        icon: 'scale',
+        title: "СРАВНЕНИЕ ВАРИАНТОВ",
+        desc: "Мы находим и сравниваем подходящие варианты для вас"
+      },
+      {
+        icon: 'headset',
+        title: "ПОДДЕРЖКА",
+        desc: "Мы всегда на связи с вами во время путешествия."
+      }
+    ],
+    learnMoreBtn: "Узнать больше",
+    modalTitle: "Почему выбирают MyNextTrip",
+    modalContent: [
+      "Ваше доверие — наш главный приоритет.",
+      "Мы поможем вам найти туристические предложения, соответствующие вашим предпочтениям, выбранному направлению и бюджету. Мы поможем вам с выбором, сделав планирование путешествия проще и удобнее.",
+      "Мы верим, что хорошее путешествие начинается с правильного выбора. С My Next Trip вы можете ознакомиться с туристическими предложениями в одном месте, получить индивидуальную консультацию и выбрать вариант, который соответствует вашим предпочтениям.",
+      "Мы ценим прозрачность информации, индивидуальный подход и чёткую коммуникацию, чтобы вы могли уверенно принимать каждое решение, связанное с путешествием.",
+      "Начните своё следующее путешествие с нами."
+    ],
+    closeBtn: "Закрыть"
+  },
+  en: {
+    tag: "Why MyNextTrip",
+    title: "Why Travel With MyNextTrip",
+    items: [
+      {
+        icon: 'user-check',
+        title: "PERSONALIZED APPROACH",
+        desc: "Offers tailored to your needs"
+      },
+      {
+        icon: 'scale',
+        title: "COMPARING OPTIONS",
+        desc: "We find and compare suitable options for you"
+      },
+      {
+        icon: 'headset',
+        title: "SUPPORT",
+        desc: "We stay in touch with you throughout your trip."
+      }
+    ],
+    learnMoreBtn: "Learn More",
+    modalTitle: "Why Choose MyNextTrip",
+    modalContent: [
+      "Your trust is our top priority.",
+      "We’ll help you find travel offers that match your preferences, chosen destination, and budget. We’ll guide you through the selection process, making travel planning easier and more convenient.",
+      "We believe that a great trip begins with the right choice. With My Next Trip, you can explore travel offers in one place, receive personalized advice, and choose the option that best suits your preferences.",
+      "We value transparent information, a personalized approach, and clear communication, so you can make every travel decision with confidence.",
+      "Start your next journey with us."
+    ],
+    closeBtn: "Close"
+  }
+};
+
+function renderWhyMyNextTrip() {
+  const lang = (typeof currentAppLang !== 'undefined') ? currentAppLang : 'en';
+  const data = (window.__whyMyNextTripTexts && window.__whyMyNextTripTexts[lang]) ? window.__whyMyNextTripTexts[lang] : window.__whyMyNextTripTexts.en;
+
+  // 1. Update the tag and section title in Why Us
+  const whyTag = document.querySelector('[data-framer-name="Why Us"] [data-framer-name="Tag"] p, [data-framer-name="Why Us"] .framer-jag73r p');
+  if (whyTag) whyTag.textContent = data.tag;
+
+  const whyTitle = document.querySelector('[data-framer-name="Why Us"] [data-framer-name="Title"] h2, [data-framer-name="Why Us"] .framer-1r2p0fe h2');
+  if (whyTitle) whyTitle.textContent = data.title;
+
+  // 2. Locate all Left Content / Menu Wrapper containers (desktop, tablet, mobile variants)
+  const leftContentBlocks = document.querySelectorAll('[data-framer-name="Left Content"], .framer-blq609');
+
+  const iconsSvg = {
+    'user-check': '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>',
+    'scale': '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>',
+    'headset': '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>'
+  };
+
+  leftContentBlocks.forEach(block => {
+    // Check if we already injected our customized wrapper
+    let customWrap = block.querySelector('.mnt-why-custom-wrapper');
+    if (!customWrap) {
+      // Hide any original children like Menu Wrapper
+      Array.from(block.children).forEach(c => {
+        c.style.display = 'none';
+      });
+
+      customWrap = document.createElement('div');
+      customWrap.className = 'mnt-why-custom-wrapper';
+      block.appendChild(customWrap);
+    }
+
+    customWrap.innerHTML = `
+      <div class="mnt-why-list">
+        ${data.items.map((item, idx) => `
+          <div class="mnt-why-list-item">
+            <div class="mnt-why-item-icon">
+              ${iconsSvg[item.icon] || iconsSvg['user-check']}
+            </div>
+            <div class="mnt-why-item-text">
+              <h3 class="mnt-why-item-title">${item.title}</h3>
+              <p class="mnt-why-item-desc">${item.desc}</p>
+            </div>
+          </div>
+          ${idx < data.items.length - 1 ? '<div class="mnt-why-item-divider"></div>' : ''}
+        `).join('')}
+      </div>
+
+      <div class="mnt-why-btn-container">
+        <button class="mnt-why-learn-btn" onclick="openWhyLearnMoreModal()">
+          <span>${data.learnMoreBtn}</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>
+    `;
+  });
+}
+
+function openWhyLearnMoreModal() {
+  let modal = document.getElementById('mnt-why-modal');
+  const lang = (typeof currentAppLang !== 'undefined') ? currentAppLang : 'en';
+  const data = window.__whyMyNextTripTexts[lang] || window.__whyMyNextTripTexts.en;
+
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'mnt-why-modal';
+    modal.className = 'mnt-why-modal-backdrop';
+    modal.onclick = (e) => {
+      if (e.target === modal) closeWhyLearnMoreModal();
+    };
+    document.body.appendChild(modal);
+  }
+
+  modal.innerHTML = `
+    <div class="mnt-why-modal-card">
+      <div class="mnt-why-modal-header">
+        <div class="mnt-why-modal-badge">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>MyNextTrip</span>
+        </div>
+        <button class="mnt-why-modal-close" onclick="closeWhyLearnMoreModal()">✕</button>
+      </div>
+      <h3 class="mnt-why-modal-title">${data.modalTitle}</h3>
+      <div class="mnt-why-modal-body">
+        ${data.modalContent.map(p => `<p>${p}</p>`).join('')}
+      </div>
+      <div class="mnt-why-modal-footer">
+        <button class="mnt-why-modal-btn" onclick="closeWhyLearnMoreModal()">${data.closeBtn}</button>
+      </div>
+    </div>
+  `;
+
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeWhyLearnMoreModal() {
+  const modal = document.getElementById('mnt-why-modal');
+  if (modal) {
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+}
+
+// Back to Top Button
+function initBackToTop() {
+  if (document.getElementById('mnt-back-to-top')) return;
+  const btn = document.createElement('button');
+  btn.id = 'mnt-back-to-top';
+  btn.className = 'mnt-back-to-top';
+  btn.setAttribute('aria-label', 'Back to top');
+  btn.innerHTML = `
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  `;
+  btn.onclick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+  document.body.appendChild(btn);
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  }, { passive: true });
+}
+
 function applyLanguageToWholePage(lang) {
   updateNavLabels(lang);
 
@@ -1427,6 +1660,7 @@ function applyLanguageToWholePage(lang) {
 
 // Ensure Logo and Custom Destinations are always rendered
 function enforceCustomAssets() {
+  renderWhyMyNextTrip();
 
   // Menu link handling for Group Tours and Visa Assistance
   document.querySelectorAll('a, p, span, h2, h3, h4').forEach(el => {
@@ -1752,16 +1986,17 @@ function handleMntSubmit(e) {
 }
 
 function renderModalContent() {
-  const t = websiteTranslations[currentAppLang].modal;
+  const lang = (typeof currentAppLang !== 'undefined') ? currentAppLang : 'en';
+  const t = (websiteTranslations[lang] && websiteTranslations[lang].modal) ? websiteTranslations[lang].modal : websiteTranslations.en.modal;
   if (!t) return;
 
   const setTxt = (id, val) => {
     const el = document.getElementById(id);
-    if (el) el.textContent = val;
+    if (el && val) el.textContent = val;
   };
   const setPh = (id, val) => {
     const el = document.getElementById(id);
-    if (el) el.placeholder = val;
+    if (el && val) el.placeholder = val;
   };
 
   setTxt('mnt-modal-title', t.title);
@@ -1769,18 +2004,15 @@ function renderModalContent() {
   setTxt('mnt-back-text', t.back);
   setTxt('mnt-step1-title', t.step1);
   setTxt('mnt-lbl-dest', t.dest);
-  setPh('mnt-input-dest', t.destPh);
   setTxt('mnt-lbl-depart', t.departDate);
   setTxt('mnt-lbl-return', t.returnDate);
+  setTxt('mnt-lbl-travelers', lang === 'hy' ? 'Ուղևորների քանակ *' : (lang === 'ru' ? 'Количество пассажиров *' : 'Number of Travelers *'));
   setTxt('mnt-lbl-adults', t.adults);
   setTxt('mnt-lbl-children', t.children);
   setTxt('mnt-children-help', t.childrenHelp);
   setTxt('mnt-lbl-hotel', t.hotelCat);
-  setPh('mnt-input-hotel', t.hotelCatPh);
   setTxt('mnt-lbl-meal', t.meal);
-  setPh('mnt-input-meal', t.mealPh);
   setTxt('mnt-lbl-budget', t.budget);
-  setPh('mnt-input-budget', t.budgetPh);
   setTxt('mnt-lbl-notes', t.notes);
   setPh('mnt-input-notes', t.notesPh);
 
@@ -1793,16 +2025,19 @@ function renderModalContent() {
   setPh('mnt-input-email', t.emailPh);
 
   setTxt('mnt-step3-title', t.step3);
+  setTxt('mnt-channel-hint', lang === 'hy' ? 'Ընտրեք, թե ինչպես եք ցանկանում, որ մենք կապ հաստատենք ձեզ հետ:' : (lang === 'ru' ? 'Выберите, как с вами связаться:' : 'Choose how you would like us to contact you:'));
   setTxt('mnt-channel-call', t.call);
   setTxt('mnt-channel-whatsapp', t.whatsapp);
+  setTxt('mnt-channel-email', 'Email');
   setTxt('mnt-sec-title', t.securityTitle);
   setTxt('mnt-sec-desc', t.securityDesc);
   setTxt('mnt-btn-text', t.submitBtn);
 }
-
 function initMyNextTrip() {
   // Enforce custom assets immediately
   enforceCustomAssets();
+  initBackToTop();
+  renderWhyMyNextTrip();
 
     // Inject Top Navigation & Mobile Drawer
   if (!document.getElementById('mnt-top-bar')) {
@@ -1836,7 +2071,7 @@ function initMyNextTrip() {
             <button class="mnt-lang-btn" data-lang="hy">ՀԱՅ</button>
           </div>
           <button class="mnt-book-btn" onclick="openMyNextTripModal('individual')">
-            <span id="mnt-book-btn-text">Book A Trip</span>
+            <span id="mnt-book-btn-text">Submit Inquiry</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </button>
           <!-- Mobile Hamburger Toggle -->
@@ -1901,7 +2136,7 @@ function initMyNextTrip() {
     }
   }, true);
 
-  // Inject Modal
+// Inject Modal
   if (!document.getElementById('mnt-modal-wrap')) {
     const modalWrap = document.createElement('div');
     modalWrap.id = 'mnt-modal-wrap';
@@ -1909,24 +2144,32 @@ function initMyNextTrip() {
     modalWrap.innerHTML = `
       <div class="mnt-modal-backdrop" onclick="closeMyNextTripModal()">
         <div class="mnt-modal-card" onclick="event.stopPropagation()">
-          <div class="mnt-modal-header" style="background-image: url('/images/attractions/barcelona.jpg');">
-            <div class="mnt-modal-header-overlay"></div>
-            <div class="mnt-modal-header-top">
-              <div class="mnt-header-logo">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1z"/></svg>
-                <span>MyNextTrip</span>
+          
+          <!-- Top Bar with Logo and Back Button -->
+          <div class="mnt-modal-topbar">
+            <div class="mnt-modal-brand">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(45deg);"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+              <div>
+                <strong>My Next Trip</strong>
+                <span>TRAVEL AGENCY</span>
               </div>
-              <button class="mnt-modal-close" onclick="closeMyNextTripModal()">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                <span id="mnt-back-text">Back</span>
-              </button>
             </div>
-            <div class="mnt-header-headings">
-              <h2 id="mnt-modal-title">Custom Tour Inquiry</h2>
-              <p id="mnt-modal-subtitle">State your preferences and we'll craft the perfect journey for you</p>
+            <button class="mnt-modal-back-btn" onclick="closeMyNextTripModal()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+              <span id="mnt-back-text">Հետ վերադառնալ</span>
+            </button>
+          </div>
+
+          <!-- Hero Heading with Coastline Background -->
+          <div class="mnt-modal-banner">
+            <div class="mnt-modal-banner-bg"></div>
+            <div class="mnt-modal-banner-content">
+              <h2 id="mnt-modal-title">Անհատական տուրի հարցում</h2>
+              <p id="mnt-modal-subtitle">Նշեք ձեր նախընտրությունները, և մենք կգտնենք ձեզ համապատասխան տարբերակներ:</p>
             </div>
           </div>
 
+          <!-- Modal Body / Form Container -->
           <div class="mnt-modal-body">
             <div id="mnt-success-box" style="display:none;" class="mnt-success-alert">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg>
@@ -1935,125 +2178,247 @@ function initMyNextTrip() {
 
             <form id="mnt-tour-form" onsubmit="handleMntSubmit(event)">
               <div class="mnt-form-columns">
-                <!-- Left Column: Travel Details -->
+                
+                <!-- Left Column: 1. Travel Details -->
                 <div class="mnt-panel">
                   <div class="mnt-panel-title">
                     <span class="mnt-step-badge">1</span>
-                    <span id="mnt-step1-title">Travel Details</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" style="transform: rotate(45deg);"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+                    <span id="mnt-step1-title">Ճանապարհորդության տվյալներ</span>
                   </div>
 
+                  <!-- Destination -->
                   <div class="mnt-field">
-                    <label id="mnt-lbl-dest">Destination *</label>
-                    <input type="text" id="mnt-input-dest" required placeholder="Italy, France, Spain, Armenia..." />
-                  </div>
-
-                  <div class="mnt-field-row">
-                    <div class="mnt-field">
-                      <label id="mnt-lbl-depart">Departure Date *</label>
-                      <input type="date" required id="mnt-input-depart" />
-                    </div>
-                    <div class="mnt-field">
-                      <label id="mnt-lbl-return">Return Date *</label>
-                      <input type="date" required id="mnt-input-return" />
-                    </div>
-                  </div>
-
-                  <div class="mnt-field-row">
-                    <div class="mnt-field">
-                      <label id="mnt-lbl-adults">Adults *</label>
-                      <select id="mnt-select-adults">
-                        <option value="1">1</option>
-                        <option value="2" selected>2</option>
-                        <option value="3">3</option>
-                        <option value="4">4+</option>
+                    <label id="mnt-lbl-dest">Ուղղություն *</label>
+                    <div class="mnt-input-with-icon">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                      <select id="mnt-select-dest" required>
+                        <option value="" disabled selected>Ընտրեք ուղղություն</option>
+                        <option value="Dubai">🇦🇪 Դուբայ (Dubai)</option>
+                        <option value="Egypt">🇪🇬 Եգիպտոս (Egypt)</option>
+                        <option value="Rome">🇮🇹 Հռոմ և Իտալիա (Rome & Italy)</option>
+                        <option value="Spain">🇪🇸 Իսպանիա (Spain)</option>
+                        <option value="France">🇫🇷 Փարիզ և Ֆրանսիա (France)</option>
+                        <option value="Greece">🇬🇷 Հունաստան (Greece)</option>
+                        <option value="Maldives">🇲🇻 Մալդիվներ (Maldives)</option>
+                        <option value="Bali">🇮🇩 Բալի (Bali)</option>
+                        <option value="Other">🌍 Այլ ուղղություն (Other)</option>
                       </select>
                     </div>
-                    <div class="mnt-field">
-                      <label id="mnt-lbl-children">Children</label>
-                      <select id="mnt-select-children">
-                        <option value="0" selected>0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3+</option>
-                      </select>
-                      <span class="mnt-helper" id="mnt-children-help">Specify age if applicable</span>
-                    </div>
                   </div>
 
+                  <!-- Dates -->
                   <div class="mnt-field-row">
                     <div class="mnt-field">
-                      <label id="mnt-lbl-hotel">Hotel Category</label>
-                      <input type="text" id="mnt-input-hotel" placeholder="3★, 4★, 5★" />
+                      <label id="mnt-lbl-depart">Մեկնելու ամսաթիվ *</label>
+                      <div class="mnt-input-with-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                        <input type="date" required id="mnt-input-depart" />
+                      </div>
                     </div>
                     <div class="mnt-field">
-                      <label id="mnt-lbl-meal">Meal Plan</label>
-                      <input type="text" id="mnt-input-meal" placeholder="Breakfast, All-Inclusive" />
+                      <label id="mnt-lbl-return">Վերադարձի ամսաթիվ *</label>
+                      <div class="mnt-input-with-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                        <input type="date" required id="mnt-input-return" />
+                      </div>
                     </div>
                   </div>
 
+                  <!-- Travelers Total -->
                   <div class="mnt-field">
-                    <label id="mnt-lbl-budget">Budget</label>
-                    <input type="text" id="mnt-input-budget" placeholder="$1,500 - $3,000" />
+                    <label id="mnt-lbl-travelers">Ուղևորների քանակ *</label>
+                    <div class="mnt-input-with-icon">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                      <select id="mnt-select-travelers-total" required>
+                        <option value="" disabled selected>Ընտրեք քանակը</option>
+                        <option value="1">1 ուղևոր</option>
+                        <option value="2">2 ուղևոր</option>
+                        <option value="3">3 ուղևոր</option>
+                        <option value="4">4 ուղևոր</option>
+                        <option value="5+">5+ ուղևոր</option>
+                      </select>
+                    </div>
                   </div>
 
+                  <!-- Adults & Children -->
+                  <div class="mnt-field-row">
+                    <div class="mnt-field">
+                      <label id="mnt-lbl-adults">Մեծահասակներ *</label>
+                      <div class="mnt-input-with-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        <select id="mnt-select-adults" required>
+                          <option value="1">1</option>
+                          <option value="2" selected>2</option>
+                          <option value="3">3</option>
+                          <option value="4">4+</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="mnt-field">
+                      <label id="mnt-lbl-children">Երեխաներ</label>
+                      <div class="mnt-input-with-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        <select id="mnt-select-children">
+                          <option value="0" selected>0</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3+</option>
+                        </select>
+                      </div>
+                      <span class="mnt-helper" id="mnt-children-help">Նշեք երեխաների տարիքները, եթե ունեք</span>
+                    </div>
+                  </div>
+
+                  <!-- Hotel Category & Meal -->
+                  <div class="mnt-field-row">
+                    <div class="mnt-field">
+                      <label id="mnt-lbl-hotel">Հյուրանոցի նախընտրելի կատեգորիա</label>
+                      <div class="mnt-input-with-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2"><path d="M3 21h18M3 7v14M21 7v14M6 21V11a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v10M9 9h6M9 13h6M9 17h6"/></svg>
+                        <select id="mnt-select-hotel">
+                          <option value="" disabled selected>Ընտրեք կատեգորիա</option>
+                          <option value="3-star">3★ Standard</option>
+                          <option value="4-star">4★ Comfort</option>
+                          <option value="5-star">5★ Luxury</option>
+                          <option value="boutique">Boutique & Villa</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="mnt-field">
+                      <label id="mnt-lbl-meal">Սննդի նախընտրություն</label>
+                      <div class="mnt-input-with-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2"><path d="M18 2v6a3 3 0 0 1-3 3 3 3 0 0 1-3-3V2M15 2v18M5 2v6a3 3 0 0 0 3 3 3 3 0 0 0 3-3V2M8 2v18"/></svg>
+                        <select id="mnt-select-meal">
+                          <option value="" disabled selected>Ընտրեք սնունդ</option>
+                          <option value="RO">Room Only (Առանց սննդի)</option>
+                          <option value="BB">Breakfast (Նախաճաշ)</option>
+                          <option value="HB">Half Board (2-անգամյա)</option>
+                          <option value="FB">Full Board (3-անգամյա)</option>
+                          <option value="AI">All Inclusive (Ամեն ինչ ներառված)</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Budget -->
                   <div class="mnt-field">
-                    <label id="mnt-lbl-notes">Additional requests</label>
-                    <textarea id="mnt-input-notes" rows="3" placeholder="Special requests, favorite pace, sea view..."></textarea>
+                    <label id="mnt-lbl-budget">Բյուջե (ըստ ցանկության)</label>
+                    <div class="mnt-input-with-icon">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8M12 6v2M12 16v2"/></svg>
+                      <select id="mnt-select-budget">
+                        <option value="" disabled selected>Ընտրեք բյուջե</option>
+                        <option value="500-1000">$500 – $1,000</option>
+                        <option value="1000-2000">$1,000 – $2,000</option>
+                        <option value="2000-3500">$2,000 – $3,500</option>
+                        <option value="3500-5000">$3,500 – $5,000</option>
+                        <option value="5000+">$5,000+</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- Additional Notes Textarea with 0/500 char counter -->
+                  <div class="mnt-field">
+                    <div class="mnt-field-label-row">
+                      <label id="mnt-lbl-notes" style="display:flex; align-items:center; gap:6px;">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        Լրացուցիչ ցանկություններ / մեկնաբանություններ
+                      </label>
+                    </div>
+                    <textarea id="mnt-input-notes" maxlength="500" rows="3" placeholder="Օրինակ՝ նախընտրում եմ ծովափնյա հանգիստ, հետաքրքրված եմ էքսկուրսիաներով, հանգիստ վայրեր և այլն..." oninput="document.getElementById('mnt-notes-count').textContent = this.value.length + '/500'"></textarea>
+                    <div class="mnt-char-counter" id="mnt-notes-count">0/500</div>
                   </div>
                 </div>
 
-                <!-- Right Column: Contacts & Channel -->
+                <!-- Right Column: 2. Contact Information & 3. Channel -->
                 <div class="mnt-panel">
+                  
+                  <!-- Step 2 -->
                   <div class="mnt-panel-title">
                     <span class="mnt-step-badge">2</span>
-                    <span id="mnt-step2-title">Contact Information</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    <span id="mnt-step2-title">Կոնտակտային տվյալներ</span>
                   </div>
 
+                  <!-- Name -->
                   <div class="mnt-field">
-                    <label id="mnt-lbl-name">Full Name *</label>
-                    <input type="text" id="mnt-input-name" required placeholder="John Doe" />
+                    <label id="mnt-lbl-name">Անուն *</label>
+                    <div class="mnt-input-with-icon">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                      <input type="text" id="mnt-input-name" required placeholder="Մուտքագրեք ձեր անունը" />
+                    </div>
                   </div>
 
+                  <!-- Phone Number with Armenia Flag +374 -->
                   <div class="mnt-field">
-                    <label id="mnt-lbl-phone">Phone Number *</label>
-                    <input type="tel" id="mnt-input-phone" required placeholder="+1 555 123 4567" />
+                    <label id="mnt-lbl-phone">Հեռախոսահամար *</label>
+                    <div class="mnt-phone-group">
+                      <div class="mnt-phone-prefix">
+                        <span class="mnt-flag">🇦🇲</span>
+                        <span class="mnt-dial">+374</span>
+                      </div>
+                      <input type="tel" id="mnt-input-phone" required placeholder="Մուտքագրեք համարը" />
+                    </div>
                   </div>
 
+                  <!-- Email -->
                   <div class="mnt-field">
-                    <label id="mnt-lbl-email">Email Address *</label>
-                    <input type="email" id="mnt-input-email" required placeholder="john@example.com" />
+                    <label id="mnt-lbl-email">Email *</label>
+                    <div class="mnt-input-with-icon">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                      <input type="email" id="mnt-input-email" required placeholder="Մուտքագրեք ձեր email-ը" />
+                    </div>
                   </div>
 
+                  <!-- Step 3 -->
                   <div class="mnt-panel-title" style="margin-top: 24px;">
                     <span class="mnt-step-badge">3</span>
-                    <span id="mnt-step3-title">Preferred Contact Channel</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    <span id="mnt-step3-title">Նախընտրելի կապի եղանակ</span>
                   </div>
 
-                  <div class="mnt-channels">
-                    <label class="mnt-channel-item">
-                      <input type="radio" name="mnt-channel" value="call" checked />
-                      <span id="mnt-channel-call">Phone Call</span>
+                  <p class="mnt-channel-hint" id="mnt-channel-hint">Ընտրեք, թե ինչպես եք ցանկանում, որ մենք կապ հաստատենք ձեզ հետ:</p>
+
+                  <div class="mnt-channels-list">
+                    <label class="mnt-channel-option">
+                      <input type="radio" name="mnt-channel" value="phone" checked />
+                      <span class="mnt-channel-radio-custom"></span>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                      <span id="mnt-channel-call">Հեռախոս</span>
                     </label>
-                    <label class="mnt-channel-item">
+
+                    <label class="mnt-channel-option">
                       <input type="radio" name="mnt-channel" value="whatsapp" />
+                      <span class="mnt-channel-radio-custom"></span>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M16.5 12c0 2.5-2 4.5-4.5 4.5a4.48 4.48 0 0 1-2.4-.7L6 17l1.2-3.6a4.48 4.48 0 0 1-.7-2.4c0-2.5 2-4.5 4.5-4.5s4.5 2 4.5 4.5z"/></svg>
                       <span id="mnt-channel-whatsapp">WhatsApp</span>
                     </label>
+
+                    <label class="mnt-channel-option">
+                      <input type="radio" name="mnt-channel" value="email" />
+                      <span class="mnt-channel-radio-custom"></span>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                      <span id="mnt-channel-email">Email</span>
+                    </label>
                   </div>
 
+                  <!-- Security Badge -->
                   <div class="mnt-security-card">
-                    <div class="mnt-security-header">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                      <strong id="mnt-sec-title">Your Data is Protected</strong>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    <div>
+                      <strong id="mnt-sec-title">Ձեր տվյալները անվտանգ են</strong>
+                      <p id="mnt-sec-desc">Մենք չենք փոխանցում ձեր անձնական տվյալները երրորդ կողմերին:</p>
                     </div>
-                    <p id="mnt-sec-desc">We respect your privacy and never share your details with third parties.</p>
                   </div>
+
                 </div>
               </div>
 
+              <!-- Bottom Submit Button -->
               <div class="mnt-submit-row">
                 <button type="submit" class="mnt-submit-btn">
-                  <span id="mnt-btn-text">Send Inquiry Now</span>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="transform: rotate(45deg);"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+                  <span id="mnt-btn-text">Ուղարկել հարցումը</span>
                 </button>
               </div>
             </form>
