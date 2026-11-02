@@ -698,6 +698,106 @@ let currentAppLang = 'hy';
 
 // Phrases mapping across languages
 const phraseMappings = [
+{
+  "en": "Destinations explored",
+  "ru": "Исследованных направлений",
+  "hy": "Բացահայտված ուղղություններ"
+},
+{
+  "en": "Years of travel expertise",
+  "ru": "Лет экспертного опыта",
+  "hy": "Տարիների ճամփորդական փորձ"
+},
+{
+  "en": "Traveler satisfaction",
+  "ru": "Довольных путешественников",
+  "hy": "Գոհ ճամփորդներ"
+},
+{
+  "en": "Handcrafted Tour Packages",
+  "ru": "Авторские туристические пакеты",
+  "hy": "Հատուկ մշակված տուր փաթեթներ"
+},
+{
+  "en": "Journeys designed for every travel style",
+  "ru": "Путешествия для любого стиля отдыха",
+  "hy": "Ճամփորդություններ յուրաքանչյուր ոճի համար"
+},
+{
+  "en": "Journeys Designed For Every Travel Style",
+  "ru": "Путешествия для любого стиля отдыха",
+  "hy": "Ճամփորդություններ յուրաքանչյուր ոճի համար"
+},
+{
+  "en": "How it Works",
+  "ru": "Как это работает",
+  "hy": "Ինչպես ենք աշխատում"
+},
+{
+  "en": "How It Works",
+  "ru": "Как это работает",
+  "hy": "Ինչպես ենք աշխատում"
+},
+{
+  "en": "Simple steps to your next journey",
+  "ru": "Простые шаги к вашему следующему путешествию",
+  "hy": "Պարզ քայլեր դեպի ձեր հաջորդ ճամփորդությունը"
+},
+{
+  "en": "Simple Steps To Your Next Journey",
+  "ru": "Простые шаги к вашему следующему путешествию",
+  "hy": "Պարզ քայլեր դեպի ձեր հաջորդ ճամփորդությունը"
+},
+{
+  "en": "Explore by Experience",
+  "ru": "Исследуйте по впечатлениям",
+  "hy": "Բացահայտեք ըստ տպավորությունների"
+},
+{
+  "en": "Experience the world in different ways",
+  "ru": "Познавайте мир по-разному",
+  "hy": "Բացահայտեք աշխարհը տարբեր ձևերով"
+},
+{
+  "en": "Experience The World In Different Ways",
+  "ru": "Познавайте мир по-разному",
+  "hy": "Բացահայտեք աշխարհը տարբեր ձևերով"
+},
+{
+  "en": "Travel Into Nature",
+  "ru": "Путешествие на природу",
+  "hy": "Ճամփորդություն դեպի բնություն"
+},
+{
+  "en": "Travel into Nature",
+  "ru": "Путешествие на природу",
+  "hy": "Ճամփորդություն դեպի բնություն"
+},
+{
+  "en": "Travel Back in Time",
+  "ru": "Путешествие во времени",
+  "hy": "Ճամփորդություն պատմության խորքերը"
+},
+{
+  "en": "Travel back in Time",
+  "ru": "Путешествие во времени",
+  "hy": "Ճամփորդություն պատմության խորքերը"
+},
+{
+  "en": "Relax & Recharge",
+  "ru": "Релакс и восстановление",
+  "hy": "Հանգիստ և վերականգնում"
+},
+{
+  "en": "Discover Local Flavours",
+  "ru": "Откройте местную кухню",
+  "hy": "Բացահայտեք տեղական համերը"
+},
+{
+  "en": "Discover Local Flavors",
+  "ru": "Откройте местную кухню",
+  "hy": "Բացահայտեք տեղական համերը"
+},
   {
     en: "China",
     ru: "Китай",
@@ -1585,6 +1685,18 @@ function initBackToTop() {
 }
 
 function applyLanguageToWholePage(lang) {
+
+  // Explicit translation for Hero Main Title (split into Framer word spans)
+  const heroH1 = document.querySelector('[data-framer-name="Main Title"] h1, h1.framer-text');
+  if (heroH1) {
+    const titles = {
+      hy: "Բացահայտեք աշխարհը, ոչ միայն քարտեզը",
+      ru: "Познавайте мир, а не просто карту",
+      en: "Experience the World, Not Just the Map"
+    };
+    heroH1.innerHTML = titles[lang] || titles.hy;
+  }
+
   updateNavLabels(lang);
 
   currentAppLang = lang;
@@ -1660,6 +1772,18 @@ function applyLanguageToWholePage(lang) {
 
 // Ensure Logo and Custom Destinations are always rendered
 function enforceCustomAssets() {
+
+  // Explicit translation for Hero Main Title (split into Framer word spans)
+  const heroH1 = document.querySelector('[data-framer-name="Main Title"] h1, h1.framer-text');
+  if (heroH1) {
+    const titles = {
+      hy: "Բացահայտեք աշխարհը, ոչ միայն քարտեզը",
+      ru: "Познавайте мир, а не просто карту",
+      en: "Experience the World, Not Just the Map"
+    };
+    heroH1.innerHTML = titles[lang] || titles.hy;
+  }
+
   renderWhyMyNextTrip();
 
   // Menu link handling for Group Tours and Visa Assistance
