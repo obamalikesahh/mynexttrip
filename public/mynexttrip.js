@@ -1686,15 +1686,16 @@ function initBackToTop() {
 
 function applyLanguageToWholePage(lang) {
 
-  // Explicit translation for Hero Main Title (split into Framer word spans)
+  // Explicit translation for Hero Main Title
   const heroH1 = document.querySelector('[data-framer-name="Main Title"] h1, h1.framer-text');
   if (heroH1) {
+    const currentL = (typeof currentAppLang !== 'undefined') ? currentAppLang : 'hy';
     const titles = {
       hy: "Բացահայտեք աշխարհը, ոչ միայն քարտեզը",
       ru: "Познавайте мир, а не просто карту",
       en: "Experience the World, Not Just the Map"
     };
-    heroH1.innerHTML = titles[lang] || titles.hy;
+    heroH1.innerHTML = titles[currentL] || titles.hy;
   }
 
   updateNavLabels(lang);
@@ -1773,15 +1774,16 @@ function applyLanguageToWholePage(lang) {
 // Ensure Logo and Custom Destinations are always rendered
 function enforceCustomAssets() {
 
-  // Explicit translation for Hero Main Title (split into Framer word spans)
+  // Explicit translation for Hero Main Title
   const heroH1 = document.querySelector('[data-framer-name="Main Title"] h1, h1.framer-text');
   if (heroH1) {
+    const currentL = (typeof currentAppLang !== 'undefined') ? currentAppLang : 'hy';
     const titles = {
       hy: "Բացահայտեք աշխարհը, ոչ միայն քարտեզը",
       ru: "Познавайте мир, а не просто карту",
       en: "Experience the World, Not Just the Map"
     };
-    heroH1.innerHTML = titles[lang] || titles.hy;
+    heroH1.innerHTML = titles[currentL] || titles.hy;
   }
 
   renderWhyMyNextTrip();
