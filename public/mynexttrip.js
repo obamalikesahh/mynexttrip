@@ -2066,9 +2066,9 @@ function initMyNextTrip() {
         <!-- Right Controls -->
         <div class="mnt-controls">
           <div class="mnt-lang-switcher">
-            <button class="mnt-lang-btn active" data-lang="en">EN</button>
+            <button class="mnt-lang-btn active" data-lang="hy">ՀԱՅ</button>
             <button class="mnt-lang-btn" data-lang="ru">RU</button>
-            <button class="mnt-lang-btn" data-lang="hy">ՀԱՅ</button>
+            <button class="mnt-lang-btn" data-lang="en">EN</button>
           </div>
           <button class="mnt-book-btn" onclick="openMyNextTripModal('individual')">
             <span id="mnt-book-btn-text">Submit Inquiry</span>
