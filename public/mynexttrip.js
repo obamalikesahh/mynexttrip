@@ -1219,9 +1219,9 @@ window.__heroSearchTranslations = {
     destOptions: [
       { val: 'Dubai', label: '🇦🇪 Դուբայ (Dubai)' },
       { val: 'Egypt', label: '🇪🇬 Եգիպտոս (Egypt)' },
-      { val: 'Rome', label: '🇮🇹 Հռոմ և Իտալիա (Rome)' },
+      { val: 'Italy', label: '🇮🇹 Իտալիա (Italy)' },
       { val: 'Spain', label: '🇪🇸 Իսպանիա (Spain)' },
-      { val: 'Paris', label: '🇫🇷 Փարիզ (Paris)' },
+      { val: 'France', label: '🇫🇷 Ֆրանսիա (France)' },
       { val: 'Greece', label: '🇬🇷 Հունաստան (Greece)' },
       { val: 'Maldives', label: '🇲🇻 Մալդիվներ (Maldives)' },
       { val: 'Bali', label: '🇮🇩 Բալի (Bali)' },
@@ -1246,9 +1246,9 @@ window.__heroSearchTranslations = {
     destOptions: [
       { val: 'Dubai', label: '🇦🇪 Дубай (ОАЭ)' },
       { val: 'Egypt', label: '🇪🇬 Египет' },
-      { val: 'Rome', label: '🇮🇹 Рим и Италия' },
+      { val: 'Italy', label: '🇮🇹 Италия' },
       { val: 'Spain', label: '🇪🇸 Испания' },
-      { val: 'Paris', label: '🇫🇷 Париж (Франция)' },
+      { val: 'France', label: '🇫🇷 Франция' },
       { val: 'Greece', label: '🇬🇷 Греция' },
       { val: 'Maldives', label: '🇲🇻 Мальдивы' },
       { val: 'Bali', label: '🇮🇩 Бали' },
@@ -1273,9 +1273,9 @@ window.__heroSearchTranslations = {
     destOptions: [
       { val: 'Dubai', label: '🇦🇪 Dubai (UAE)' },
       { val: 'Egypt', label: '🇪🇬 Egypt' },
-      { val: 'Rome', label: '🇮🇹 Rome & Italy' },
+      { val: 'Italy', label: '🇮🇹 Italy' },
       { val: 'Spain', label: '🇪🇸 Spain' },
-      { val: 'Paris', label: '🇫🇷 Paris (France)' },
+      { val: 'France', label: '🇫🇷 France' },
       { val: 'Greece', label: '🇬🇷 Greece' },
       { val: 'Maldives', label: '🇲🇻 Maldives' },
       { val: 'Bali', label: '🇮🇩 Bali' },
@@ -2469,9 +2469,9 @@ function initMyNextTrip() {
                         <option value="" disabled selected>Ընտրեք ուղղություն</option>
                         <option value="Dubai">🇦🇪 Դուբայ (Dubai)</option>
                         <option value="Egypt">🇪🇬 Եգիպտոս (Egypt)</option>
-                        <option value="Rome">🇮🇹 Հռոմ և Իտալիա (Rome & Italy)</option>
+                        <option value="Italy">🇮🇹 Իտալիա (Italy)</option>
                         <option value="Spain">🇪🇸 Իսպանիա (Spain)</option>
-                        <option value="France">🇫🇷 Փարիզ և Ֆրանսիա (France)</option>
+                        <option value="France">🇫🇷 Ֆրանսիա (France)</option>
                         <option value="Greece">🇬🇷 Հունաստան (Greece)</option>
                         <option value="Maldives">🇲🇻 Մալդիվներ (Maldives)</option>
                         <option value="Bali">🇮🇩 Բալի (Bali)</option>
