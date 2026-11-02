@@ -1684,6 +1684,152 @@ function initBackToTop() {
   }, { passive: true });
 }
 
+
+// =========================================================================
+// Explicit Translation for Complex Framer Section Headings & Steps
+// =========================================================================
+function translateAllFramerHeadings(lang) {
+  const activeLangKey = lang || (typeof currentAppLang !== 'undefined' ? currentAppLang : 'hy');
+
+  const sectionHeadings = [
+    // 1. Choose your perfect travel style (Upload 1)
+    {
+      selector: '[data-framer-name="Choose your style"] h2, .framer-1a9y67u h2, h2.framer-1nnsewm',
+      matchText: 'travel style',
+      hy: 'Ընտրեք ձեր կատարյալ հանգստի ոճը',
+      ru: 'Выберите ваш идеальный стиль отдыха',
+      en: 'Choose your perfect travel style'
+    },
+    // 2. Most Loved Destinations / Explore the world's most popular destinations (Upload 2)
+    {
+      selector: '[data-framer-name="Popular Destinations"] h2, .framer-6wz0p1 h2',
+      matchText: 'popular destinations',
+      hy: 'Աշխարհի ամենահայտնի ուղղությունները',
+      ru: 'Самые популярные направления мира',
+      en: 'Explore the world’s most popular destinations'
+    },
+    {
+      selector: '[data-framer-name="Popular Destinations"] [data-framer-name="Tag"] p, .framer-6wz0p1 p',
+      matchText: 'most loved',
+      hy: 'Հանրաճանաչ ուղղություններ',
+      ru: 'Любимые направления',
+      en: 'Most Loved Destinations'
+    },
+    // 3. Handcrafted Tour Packages & Journeys Designed For Every Travel Style
+    {
+      selector: '[data-framer-name="Tours"] h2, #mnt-tours-section h2',
+      matchText: 'travel style',
+      hy: 'Տուրեր յուրաքանչյուր ճանապարհորդական ոճի համար',
+      ru: 'Туры для любого стиля путешествий',
+      en: 'Journeys designed for every travel style'
+    },
+    {
+      selector: '[data-framer-name="Tours"] [data-framer-name="Tag"] p, #mnt-tours-section p',
+      matchText: 'tour packages',
+      hy: 'Հատուկ մշակված տուր փաթեթներ',
+      ru: 'Авторские туристические пакеты',
+      en: 'Handcrafted Tour Packages'
+    },
+    // 4. Everything You Need For Your Next Journey & What's included (Upload 4)
+    {
+      selector: '[data-framer-name="Features"] h2, [data-framer-name="What’s Included"] h2, .framer-5718fu h2',
+      matchText: 'next journey',
+      hy: 'Այն ամենը, ինչ անհրաժեշտ է ձեր հանգստի համար',
+      ru: 'Все необходимое для вашего отдыха',
+      en: 'Everything you need for your next journey'
+    },
+    {
+      selector: '[data-framer-name="Features"] [data-framer-name="Tag"] p, .framer-5718fu p',
+      matchText: 'included',
+      hy: 'Ինչ է ներառված',
+      ru: 'Что включено',
+      en: "What's included"
+    },
+    // 5. How It Works / Simple steps to your next journey (Upload 3)
+    {
+      selector: '[data-framer-name="How it Works"] h2, [data-framer-name="How It Works"] h2, .framer-1a48c90 h2',
+      matchText: 'next journey',
+      hy: 'Պարզ քայլեր դեպի ձեր հաջորդ ճամփորդությունը',
+      ru: 'Простые шаги к вашему следующему путешествию',
+      en: 'Simple steps to your next journey'
+    },
+    {
+      selector: '[data-framer-name="How it Works"] [data-framer-name="Tag"] p, .framer-1a48c90 p',
+      matchText: 'how it works',
+      hy: 'Ինչպես ենք աշխատում',
+      ru: 'Как мы работаем',
+      en: 'How it Works'
+    },
+    // 6. Inspiration And Tips For Your Next Travel Journey & Blogs (Upload 5)
+    {
+      selector: '[data-framer-name="Blogs"] h2, .framer-53llfx h2',
+      matchText: 'next travel journey',
+      hy: 'Ոգեշնչում և խորհուրդներ ձեր հաջորդ ճամփորդության համար',
+      ru: 'Вдохновение и советы для вашего следующего путешествия',
+      en: 'Inspiration and tips for your next travel journey'
+    },
+    {
+      selector: '[data-framer-name="Blogs"] [data-framer-name="Tag"] p, .framer-53llfx p',
+      matchText: 'blogs',
+      hy: 'Բլոգ',
+      ru: 'Блог',
+      en: 'Blogs'
+    },
+    // 7. Experience the World in Different Ways & Explore by Experience
+    {
+      selector: '[data-framer-name="Experience"] h2, .framer-1clvqlu h2',
+      matchText: 'different ways',
+      hy: 'Բացահայտեք աշխարհը տարբեր ձևերով',
+      ru: 'Познавайте мир по-разному',
+      en: 'Experience the world in different ways'
+    },
+    {
+      selector: '[data-framer-name="Experience"] [data-framer-name="Tag"] p, .framer-1clvqlu p',
+      matchText: 'explore by experience',
+      hy: 'Բացահայտեք ըստ տպավորությունների',
+      ru: 'Исследуйте по впечатлениям',
+      en: 'Explore by Experience'
+    }
+  ];
+
+  sectionHeadings.forEach(item => {
+    document.querySelectorAll(item.selector).forEach(el => {
+      const txt = el.textContent.toLowerCase();
+      if (txt.includes(item.matchText.toLowerCase()) || txt.includes(item.hy.toLowerCase().slice(0, 10)) || txt.includes(item.ru.toLowerCase().slice(0, 10))) {
+        el.textContent = item[activeLangKey] || item.en;
+      }
+    });
+  });
+
+  // Step names in How It Works (Upload 3: 01, 02, 03) - Ensure clean title without double '01 -'
+  const stepTitles = {
+    hy: ['Ընտրեք ուղղությունը', 'Մենք կհոգանք մնացածը', 'Վայելեք հանգիստը'],
+    ru: ['Выберите направление', 'Мы всё организуем', 'Наслаждайтесь поездкой'],
+    en: ['Choose your journey', 'We handle the details', 'Experience the journey']
+  };
+
+  document.querySelectorAll('[data-framer-name="Name"] h4, .framer-1ubverm h4').forEach((el, idx) => {
+    const list = stepTitles[activeLangKey] || stepTitles.en;
+    if (list[idx]) {
+      el.textContent = list[idx];
+    }
+  });
+
+  // Stat numbers subtext (Upload 2)
+  const statLabels = {
+    hy: ['Բացահայտված ուղղություններ', 'Տարիների ճամփորդական փորձ', 'Գոհ ճամփորդներ'],
+    ru: ['Исследованных направлений', 'Лет экспертного опыта', 'Довольных путешественников'],
+    en: ['Destinations explored', 'Years of travel expertise', 'Traveler satisfaction']
+  };
+  document.querySelectorAll('.framer-136b6k8 p, .framer-177h89c p, .framer-135qovl p').forEach((el, idx) => {
+    const list = statLabels[activeLangKey] || statLabels.en;
+    if (list[idx % 3]) {
+      el.textContent = list[idx % 3];
+    }
+  });
+}
+
+
 function applyLanguageToWholePage(lang) {
 
   // Explicit translation for Hero Main Title
@@ -1769,6 +1915,7 @@ function applyLanguageToWholePage(lang) {
 
   // 4. Re-render modal content
   renderModalContent();
+  translateAllFramerHeadings(lang);
   }
 
 // Ensure Logo and Custom Destinations are always rendered
@@ -1787,6 +1934,7 @@ function enforceCustomAssets() {
   }
 
   renderWhyMyNextTrip();
+  translateAllFramerHeadings();
 
   // Menu link handling for Group Tours and Visa Assistance
   document.querySelectorAll('a, p, span, h2, h3, h4').forEach(el => {
