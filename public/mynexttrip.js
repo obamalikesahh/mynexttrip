@@ -645,7 +645,7 @@ const websiteTranslations = {
     step2Desc: "Ավիատոմսեր, հյուրանոցներ, անհատական էքսկուրսիաներ:",
     step3Title: "03 - Վայելեք հանգիստը",
     step3Desc: "Ճանապարհորդեք ապահով և մեր 24/7 աջակցությամբ:",
-    whyUsTag: "Ինչու՞ MyNextTrip",
+    whyUsTag: "Ինչո՞ւ MyNextTrip",
     whyUsTitle: "Ամրագրեք վստահությամբ, հանգստացեք խաղաղ սրտով",
     reviewsTag: "Կարծիքներ",
     reviewsTitle: "Մեր ճանապարհորդների կարծիքները",
@@ -1116,7 +1116,7 @@ const phraseMappings = [
   {
     en: "Why Travel With Us",
     ru: "Почему выбирают нас",
-    hy: "Ինչու՞ MyNextTrip"
+    hy: "Ինչո՞ւ MyNextTrip"
   },
   {
     en: "Book With Confidence, Travel With Peace Of Mind",
@@ -1458,8 +1458,8 @@ function handleHeroSearchSubmit() {
 
 window.__whyMyNextTripTexts = {
   hy: {
-    tag: "Ինչու MyNextTrip",
-    title: "Ինչու՞ ճամփորդել MyNextTrip-ի հետ",
+    tag: "Ինչո՞ւ MyNextTrip",
+    title: "Ինչո՞ւ ճամփորդել MyNextTrip-ի հետ",
     items: [
       {
         icon: 'user-check',
@@ -1478,7 +1478,7 @@ window.__whyMyNextTripTexts = {
       }
     ],
     learnMoreBtn: "Իմանալ ավելին",
-    modalTitle: "Ինչու՞ ընտրել MyNextTrip-ը",
+    modalTitle: "Ինչո՞ւ ընտրել MyNextTrip-ը",
     modalContent: [
       "Ձեր վստահությունը՝ մեր առաջնահերթությունն է։",
       "Մենք կօգնենք Ձեզ գտնել Ձեր նախասիրություններին, նախընտրած ուղղությանը և բյուջեին համապատասխան ճամփորդական առաջարկներ։ Մենք կաջակցենք Ձեզ ընտրության հարցում՝ դարձնելով ճամփորդության պլանավորումն ավելի հեշտ ու հարմար։",
