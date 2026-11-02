@@ -505,9 +505,9 @@ const websiteTranslations = {
       title: "Custom Tour Inquiry",
       subtitle: "State your travel preferences, and our specialists will assemble the ideal proposal:",
       back: "Back to website",
-      step1: "1. Travel Details",
-      step2: "2. Contact Information",
-      step3: "3. Preferred Contact Channel",
+      step1: "Travel Details",
+      step2: "Contact Information",
+      step3: "Preferred Contact Channel",
       dest: "Destination *",
       destPh: "e.g., Italy, France, Spain, Armenia, New York...",
       departDate: "Departure Date *",
@@ -582,9 +582,9 @@ const websiteTranslations = {
       title: "Заявка на индивидуальный тур",
       subtitle: "Укажите ваши пожелания, и мы подготовим оптимальное предложение:",
       back: "Назад на сайт",
-      step1: "1. Детали поездки",
-      step2: "2. Контактная информация",
-      step3: "3. Предпочтительный способ связи",
+      step1: "Детали поездки",
+      step2: "Контактная информация",
+      step3: "Предпочтительный способ связи",
       dest: "Направление *",
       destPh: "Например: Италия, Франция, Испания, Армения...",
       departDate: "Дата вылета *",
@@ -659,9 +659,9 @@ const websiteTranslations = {
       title: "Անհատական տուրի հարցում",
       subtitle: "Նշեք ձեր նախընտրությունները, և մենք կգտնենք ձեզ համապատասխան տարբերակներ:",
       back: "Հետ վերադառնալ",
-      step1: "1. Ճանապարհորդության տվյալներ",
-      step2: "2. Կոնտակտային տվյալներ",
-      step3: "3. Նախընտրելի կապի եղանակ",
+      step1: "Ճանապարհորդության տվյալներ",
+      step2: "Կոնտակտային տվյալներ",
+      step3: "Նախընտրելի կապի եղանակ",
       dest: "Ուղղություն *",
       destPh: "Օր.՝ Իտալիա, Ֆրանսիա, Իսպանիա, Հայաստան, Նյու Յորք...",
       departDate: "Մեկնելու ամսաթիվ *",
@@ -694,7 +694,7 @@ const websiteTranslations = {
   }
 };
 
-let currentAppLang = 'en';
+let currentAppLang = 'hy';
 
 // Phrases mapping across languages
 const phraseMappings = [
@@ -2182,7 +2182,6 @@ function initMyNextTrip() {
                 <!-- Left Column: 1. Travel Details -->
                 <div class="mnt-panel">
                   <div class="mnt-panel-title">
-                    <span class="mnt-step-badge">1</span>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" style="transform: rotate(45deg);"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
                     <span id="mnt-step1-title">Ճանապարհորդության տվյալներ</span>
                   </div>
@@ -2335,7 +2334,6 @@ function initMyNextTrip() {
                   
                   <!-- Step 2 -->
                   <div class="mnt-panel-title">
-                    <span class="mnt-step-badge">2</span>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                     <span id="mnt-step2-title">Կոնտակտային տվյալներ</span>
                   </div>
@@ -2372,7 +2370,6 @@ function initMyNextTrip() {
 
                   <!-- Step 3 -->
                   <div class="mnt-panel-title" style="margin-top: 24px;">
-                    <span class="mnt-step-badge">3</span>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
                     <span id="mnt-step3-title">Նախընտրելի կապի եղանակ</span>
                   </div>
@@ -2432,11 +2429,11 @@ function initMyNextTrip() {
   // Simple initial setup without freezing MutationObserver
   setTimeout(() => {
     enforceCustomAssets();
-    applyLanguageToWholePage('en');
+    applyLanguageToWholePage('hy');
   }, 300);
   setTimeout(() => {
     enforceCustomAssets();
-    applyLanguageToWholePage('en');
+    applyLanguageToWholePage('hy');
   }, 1500);
 
   // Sync on scroll so scrolling through sticky section updates images immediately
