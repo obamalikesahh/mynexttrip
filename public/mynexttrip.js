@@ -356,9 +356,9 @@ function renderContactSection() {
     sec = document.createElement('section');
     sec.id = 'mnt-contact-section';
     sec.className = 'mnt-contact-section';
-    const footer = document.querySelector('footer');
-    if (footer && footer.parentNode) {
-      footer.parentNode.insertBefore(sec, footer);
+    const footerWrap = document.querySelector('.framer-1388mbi-container') || document.querySelector('footer');
+    if (footerWrap && footerWrap.parentNode) {
+      footerWrap.parentNode.insertBefore(sec, footerWrap);
     } else {
       document.body.appendChild(sec);
     }
@@ -1999,7 +1999,9 @@ function applyLanguageToWholePage(lang) {
   window.__currentLang = lang;
   renderTourTypesSection();
   renderVisaSection();
+  renderContactSection();
   renderHeroSearchBar(lang);
+  updateWhatsAppFloatLabel(lang);
 
   currentAppLang = lang;
   window.__currentLang = lang;
@@ -2065,10 +2067,52 @@ function applyLanguageToWholePage(lang) {
   // 4. Re-render modal content
   renderModalContent();
   translateAllFramerHeadings(lang);
+  updateFooterContactColumn(lang);
   }
 
 // Ensure Logo and Custom Destinations are always rendered
+
+// Dynamically replace / enhance footer columns with Email and Contacts
+function updateFooterContactColumn(lang) {
+  const currentL = lang || (typeof currentAppLang !== 'undefined' ? currentAppLang : 'hy');
+  const titles = {
+    hy: { title: 'Կապ', emailText: 'info@mynexttrip.am' },
+    ru: { title: 'Контакты', emailText: 'info@mynexttrip.am' },
+    en: { title: 'Contact', emailText: 'info@mynexttrip.am' }
+  };
+  const t = titles[currentL] || titles.hy;
+
+  // Replace 'Other Pages' column title with 'Contact' / 'Կապ' / 'Контакты'
+  document.querySelectorAll('.framer-1i0ddgz .framer-8r4q31 p, [data-framer-name="Documentation "] .framer-8r4q31 p').forEach(p => {
+    if (p.textContent.includes('Other Pages') || p.textContent.includes('Pages') || p.textContent.includes('Կապ') || p.textContent.includes('Contact')) {
+      p.textContent = t.title;
+    }
+  });
+
+  // Replace the '404' link with info@mynexttrip.am mailto link
+  document.querySelectorAll('.framer-1i0ddgz a[href*="404"], .framer-1iup7vv a[href*="404"]').forEach(a => {
+    a.href = 'mailto:info@mynexttrip.am';
+    a.setAttribute('target', '_blank');
+    const p = a.querySelector('p');
+    if (p) {
+      p.textContent = t.emailText;
+      p.style.whiteSpace = 'nowrap';
+    } else {
+      a.textContent = t.emailText;
+    }
+  });
+
+  // Replace any mailto link text
+  document.querySelectorAll('a[href^="mailto:"]').forEach(a => {
+    a.href = 'mailto:info@mynexttrip.am';
+    if (a.textContent.includes('@')) {
+      a.textContent = 'info@mynexttrip.am';
+    }
+  });
+}
+
 function enforceCustomAssets() {
+  updateFooterContactColumn();
 
   // Explicit translation for Hero Main Title
   const heroH1 = document.querySelector('[data-framer-name="Main Title"] h1, h1.framer-text');
