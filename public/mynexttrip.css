@@ -2444,3 +2444,55 @@
     display: none;
   }
 }
+
+
+/* ==========================================================================
+   Footer Email & Contact Styling
+   ========================================================================== */
+a[href^="mailto:info@mynexttrip.am"],
+.framer-1iup7vv a[href^="mailto:"],
+.framer-1i0ddgz a[href^="mailto:"] {
+  display: inline-flex !important;
+  align-items: center !important;
+  color: #38bdf8 !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+  letter-spacing: 0.01em !important;
+}
+
+a[href^="mailto:info@mynexttrip.am"]:hover,
+.framer-1iup7vv a[href^="mailto:"]:hover,
+.framer-1i0ddgz a[href^="mailto:"]:hover {
+  color: #7dd3fc !important;
+  text-shadow: 0 0 12px rgba(56, 189, 248, 0.6) !important;
+  transform: translateX(2px) !important;
+}
+
+a[href^="mailto:info@mynexttrip.am"] p,
+.framer-1iup7vv a[href^="mailto:"] p,
+.framer-1i0ddgz a[href^="mailto:"] p {
+  color: #38bdf8 !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+  margin: 0 !important;
+  transition: color 0.2s ease !important;
+}
+
+a[href^="mailto:info@mynexttrip.am"]:hover p,
+.framer-1iup7vv a[href^="mailto:"]:hover p,
+.framer-1i0ddgz a[href^="mailto:"]:hover p {
+  color: #7dd3fc !important;
+}
+
+/* Also style the column heading 'Կապ' / 'Contact' */
+.framer-1i0ddgz .framer-8r4q31 p {
+  color: #94a3b8 !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  margin-bottom: 6px !important;
+}

@@ -2086,16 +2086,29 @@ function updateFooterContactColumn(lang) {
   document.querySelectorAll('.framer-1i0ddgz .framer-8r4q31 p, [data-framer-name="Documentation "] .framer-8r4q31 p').forEach(p => {
     if (p.textContent.includes('Other Pages') || p.textContent.includes('Pages') || p.textContent.includes('Կապ') || p.textContent.includes('Contact')) {
       p.textContent = t.title;
+      p.style.color = '#94a3b8';
+      p.style.fontSize = '14px';
+      p.style.fontWeight = '700';
+      p.style.letterSpacing = '0.05em';
+      p.style.textTransform = 'uppercase';
     }
   });
 
   // Replace the '404' link with info@mynexttrip.am mailto link
-  document.querySelectorAll('.framer-1i0ddgz a[href*="404"], .framer-1iup7vv a[href*="404"]').forEach(a => {
+  document.querySelectorAll('.framer-1i0ddgz a, .framer-1iup7vv a, a[href^="mailto:info@mynexttrip.am"]').forEach(a => {
     a.href = 'mailto:info@mynexttrip.am';
     a.setAttribute('target', '_blank');
+    a.style.color = '#38bdf8';
+    a.style.fontSize = '16px';
+    a.style.fontWeight = '600';
+    a.style.textDecoration = 'none';
+
     const p = a.querySelector('p');
     if (p) {
       p.textContent = t.emailText;
+      p.style.color = '#38bdf8';
+      p.style.fontSize = '16px';
+      p.style.fontWeight = '600';
       p.style.whiteSpace = 'nowrap';
     } else {
       a.textContent = t.emailText;
@@ -2105,8 +2118,18 @@ function updateFooterContactColumn(lang) {
   // Replace any mailto link text
   document.querySelectorAll('a[href^="mailto:"]').forEach(a => {
     a.href = 'mailto:info@mynexttrip.am';
+    a.style.color = '#38bdf8';
+    a.style.fontSize = '16px';
+    a.style.fontWeight = '600';
+    a.style.textDecoration = 'none';
     if (a.textContent.includes('@')) {
       a.textContent = 'info@mynexttrip.am';
+    }
+    const p = a.querySelector('p');
+    if (p) {
+      p.style.color = '#38bdf8';
+      p.style.fontSize = '16px';
+      p.style.fontWeight = '600';
     }
   });
 }
