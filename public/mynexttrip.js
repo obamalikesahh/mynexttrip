@@ -10,7 +10,9 @@ window.__visaFilter = 'all';
 function setVisaFilter(category) {
   window.__visaFilter = category;
   renderVisaSection();
+  renderContactSection();
   renderHeroSearchBar(lang);
+  updateWhatsAppFloatLabel(lang);
 }
 
 function scrollToGroupTours() {
@@ -72,7 +74,7 @@ function handleMenuNav(e, target) {
       const w = document.querySelector('section[data-framer-name="Why Us"]') || document.querySelector('section[data-framer-name="Experience"]');
       if (w) w.scrollIntoView({ behavior: 'smooth' });
     } else if (target === 'contact') {
-      const c = document.querySelector('footer') || document.querySelector('section[data-framer-name="Conversion"]');
+      const c = document.getElementById('mnt-contact-section') || document.querySelector('footer') || document.querySelector('section[data-framer-name="Conversion"]');
       if (c) c.scrollIntoView({ behavior: 'smooth' });
     }
   }, 100);
@@ -296,6 +298,153 @@ function renderVisaSection() {
 function openVisaConsultationModal() {
   openMyNextTripModal('visa');
 }
+
+// =========================================================================
+// Contacts Section & WhatsApp Floating Button
+// =========================================================================
+window.__contactSectionTexts = {
+  hy: {
+    tag: "Կապ",
+    title: "Կապը մեզ հետ",
+    sub: "Մենք միշտ պատրաստ ենք պատասխանել ձեր հարցերին և օգնել կազմակերպել ձեր հաջորդ ճամփորդությունը:",
+    phoneLabel: "Հեռախոս",
+    phoneValue: "Շուտով հասանելի կլինի",
+    phoneHint: "Շուտով կտեղադրվի մեր պաշտոնական հեռախոսահամարը",
+    emailLabel: "Էլ. փոստ",
+    emailValue: "info@mynexttrip.am",
+    emailHint: "Գրեք մեզ ձեր հարցումները ցանկացած ժամանակ",
+    instaLabel: "Instagram",
+    instaValue: "@my.next_trip",
+    instaHint: "Հետևեք մեր նոր առաջարկներին և ակցիաներին",
+    whatsappBtn: "Կապ WhatsApp-ով"
+  },
+  ru: {
+    tag: "Контакты",
+    title: "Свяжитесь с нами",
+    sub: "Мы всегда на связи и с радостью поможем спланировать ваше следующее идеальное путешествие:",
+    phoneLabel: "Телефон",
+    phoneValue: "Скоро появится",
+    phoneHint: "Скоро здесь будет указан наш официальный номер",
+    emailLabel: "Эл. почта",
+    emailValue: "info@mynexttrip.am",
+    emailHint: "Пишите нам в любое время по любым вопросам",
+    instaLabel: "Instagram",
+    instaValue: "@my.next_trip",
+    instaHint: "Следите за нашими актуальными турами и акциями",
+    whatsappBtn: "Чат в WhatsApp"
+  },
+  en: {
+    tag: "Contact",
+    title: "Contact Us",
+    sub: "We are always ready to answer your questions and help design your next unforgettable trip:",
+    phoneLabel: "Phone",
+    phoneValue: "Coming soon",
+    phoneHint: "Our official telephone number will be published here soon",
+    emailLabel: "Email",
+    emailValue: "info@mynexttrip.am",
+    emailHint: "Send your inquiries anytime, we reply promptly",
+    instaLabel: "Instagram",
+    instaValue: "@my.next_trip",
+    instaHint: "Follow us for travel inspiration, packages and updates",
+    whatsappBtn: "Chat on WhatsApp"
+  }
+};
+
+function renderContactSection() {
+  let sec = document.getElementById('mnt-contact-section');
+  if (!sec) {
+    sec = document.createElement('section');
+    sec.id = 'mnt-contact-section';
+    sec.className = 'mnt-contact-section';
+    const footer = document.querySelector('footer');
+    if (footer && footer.parentNode) {
+      footer.parentNode.insertBefore(sec, footer);
+    } else {
+      document.body.appendChild(sec);
+    }
+  }
+
+  const lang = (typeof currentAppLang !== 'undefined') ? currentAppLang : 'en';
+  const t = window.__contactSectionTexts[lang] || window.__contactSectionTexts.en;
+
+  sec.innerHTML = `
+    <div class="mnt-contact-container">
+      <div class="mnt-contact-header">
+        <span class="mnt-contact-badge">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          ${t.tag}
+        </span>
+        <h2 class="mnt-contact-title">${t.title}</h2>
+        <p class="mnt-contact-sub">${t.sub}</p>
+      </div>
+
+      <div class="mnt-contact-grid">
+        <!-- Phone Card -->
+        <div class="mnt-contact-card">
+          <div class="mnt-contact-icon-box mnt-contact-icon-phone">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <span class="mnt-contact-label">${t.phoneLabel}</span>
+          <div class="mnt-contact-value" style="color: #cbd5e1; font-weight: 600; font-size: 16px;">${t.phoneValue}</div>
+          <p class="mnt-contact-hint">${t.phoneHint}</p>
+        </div>
+
+        <!-- Email Card -->
+        <a href="mailto:info@mynexttrip.am" class="mnt-contact-card">
+          <div class="mnt-contact-icon-box mnt-contact-icon-email">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </div>
+          <span class="mnt-contact-label">${t.emailLabel}</span>
+          <div class="mnt-contact-value">${t.emailValue}</div>
+          <p class="mnt-contact-hint">${t.emailHint}</p>
+        </a>
+
+        <!-- Instagram Card -->
+        <a href="https://instagram.com/my.next_trip" target="_blank" rel="noopener noreferrer" class="mnt-contact-card">
+          <div class="mnt-contact-icon-box mnt-contact-icon-insta">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          </div>
+          <span class="mnt-contact-label">${t.instaLabel}</span>
+          <div class="mnt-contact-value">${t.instaValue}</div>
+          <p class="mnt-contact-hint">${t.instaHint}</p>
+        </a>
+      </div>
+    </div>
+  `;
+}
+
+// Floating WhatsApp Button (Fixed Bottom-Left on all pages)
+function initWhatsAppFloat() {
+  if (document.getElementById('mnt-whatsapp-float')) return;
+  const btn = document.createElement('a');
+  btn.id = 'mnt-whatsapp-float';
+  btn.className = 'mnt-whatsapp-float';
+  btn.href = 'https://wa.me/?text=Hello%20MyNextTrip!';
+  btn.target = '_blank';
+  btn.rel = 'noopener noreferrer';
+  btn.setAttribute('aria-label', 'Chat on WhatsApp');
+
+  const lang = (typeof currentAppLang !== 'undefined') ? currentAppLang : 'hy';
+  const t = window.__contactSectionTexts[lang] || window.__contactSectionTexts.hy;
+
+  btn.innerHTML = `
+    <div class="mnt-whatsapp-icon-wrap">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+      </svg>
+    </div>
+    <span class="mnt-whatsapp-label" id="mnt-whatsapp-label">${t.whatsappBtn}</span>
+  `;
+  document.body.appendChild(btn);
+}
+
+function updateWhatsAppFloatLabel(lang) {
+  const lbl = document.getElementById('mnt-whatsapp-label');
+  if (lbl && window.__contactSectionTexts && window.__contactSectionTexts[lang]) {
+    lbl.textContent = window.__contactSectionTexts[lang].whatsappBtn;
+  }
+}
+
 
 // =========================================================================
 // MyNextTrip - Complete Translation, Logo, Dynamic Images & Form Controller
@@ -2159,6 +2308,10 @@ function enforceCustomAssets() {
   }
 
   // Replace Logo SVG everywhere (navbar, overlay menu, footer)
+  // Update footer social links to official handles
+  document.querySelectorAll('a[data-framer-name="Instagram"], a.framer-ru7vy4').forEach(a => {
+    a.href = 'https://instagram.com/my.next_trip';
+  });
   document.querySelectorAll('.framer-1d2ezg7 img, .framer-10n2m19 img, a[data-framer-name="Logo"] img, img[src*="v6EkJgSa5PCNm2Q3kt5iu8B8tJo"]').forEach(img => {
     if (!img.src.includes('v=mynexttrip') && !img.src.endsWith('/images/v6EkJgSa5PCNm2Q3kt5iu8B8tJo.svg')) {
       img.src = '/images/v6EkJgSa5PCNm2Q3kt5iu8B8tJo.svg?v=mynexttrip';
@@ -2174,7 +2327,7 @@ function enforceCustomAssets() {
       if (text.trim().toLowerCase() === 'traavellio' || text.trim().toLowerCase() === 'travellio') {
         el.textContent = 'MyNextTrip';
       } else if (text.includes('info@traavellio.co') || text.includes('hello@travellio.tour') || text.includes('traavellio.co') || text.includes('travellio.tour')) {
-        el.textContent = 'info@mynexttrip.com';
+        el.textContent = 'info@mynexttrip.am';
       } else if (text.includes('@Traavellio') || text.includes('@travellio')) {
         el.textContent = text.replace(/@traavellio/gi, '@MyNextTrip');
       } else if (text.includes('#VibeWithTravellio') || text.includes('#VibeWithTraavellio')) {
@@ -2185,7 +2338,7 @@ function enforceCustomAssets() {
     }
     if (el.tagName === 'A' && el.href) {
       if (el.href.includes('mailto:')) {
-        el.href = 'mailto:info@mynexttrip.com';
+        el.href = 'mailto:info@mynexttrip.am';
       }
     }
   });
@@ -2311,7 +2464,9 @@ function initMyNextTrip() {
   // Enforce custom assets immediately
   enforceCustomAssets();
   initBackToTop();
+  initWhatsAppFloat();
   renderWhyMyNextTrip();
+  renderContactSection();
 
     // Inject Top Navigation & Mobile Drawer
   if (!document.getElementById('mnt-top-bar')) {
